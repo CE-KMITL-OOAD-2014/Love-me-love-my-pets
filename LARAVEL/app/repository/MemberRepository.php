@@ -1,12 +1,12 @@
 <?php
 	namespace member;
-	
+			   
 	interface MemberRepository {
 		public function fillInput($memIn);
 		public function saveToDB($memIn);
 	}
 
-
+											 
 	class EloquentMemberRepository Implements MemberRepository {
 		public function fillInput($memIn){
 			$memIn->userName = Input::get('userName');

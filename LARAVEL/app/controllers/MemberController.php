@@ -1,15 +1,13 @@
 <?php
-
-
-//use member\CoreMember;
+use member\CoreMember;
 
 	class MemberController extends BaseController {
 		protected $mem;
-		public function _construct ($memIn){
+		public function __construct (MemberRepository $memIn){
 			$this->mem = $memIn;
 		}
 		public function register(){
-			$newMember = new CoreMember();
+			$newMember = new member\CoreMember();
 			$newMember = $this->mem->fillInput($newMember);
 			$this->mem->saveToDB($newMember);
 			View::make('simple');
