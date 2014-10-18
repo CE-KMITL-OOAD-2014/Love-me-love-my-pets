@@ -80,4 +80,4 @@ App::down(function()
 
 require app_path().'/filters.php';
 
-App::bind('member\MemberRepository','member\EloquentMemberRepository');
+App::bind('repository\IMemberRepo','repository\MemberRepository');

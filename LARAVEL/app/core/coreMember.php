@@ -1,5 +1,5 @@
 <?php
-namespace member;
+namespace core;
 
 class CoreMember {
 	private $idUser;

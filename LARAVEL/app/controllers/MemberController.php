@@ -1,18 +1,25 @@
 <?php
-use member\CoreMember;
 
-	class MemberController extends BaseController {
-		protected $mem;
-		public function __construct (MemberRepository $memIn){
-			$this->mem = $memIn;
-		}
-		public function register(){
-			$newMember = new member\CoreMember();
-			$newMember = $this->mem->fillInput($newMember);
-			$this->mem->saveToDB($newMember);
-			View::make('simple');
-		}
+class MemberController extends BaseController {
+	protected $mem;
+	public function __construct (repository\MemberRepository $memIn){
+		$this->mem = $memIn;
 	}
+	public function register(){
+		$newMember = new core\CoreMember();
+		//$newMember = $this->mem->fillInput($newMember);
+		$newMember->setUserName(Input::get('userName'));
+		$newMember->setPassword (Input::get('password'));
+		$newMember->setRealNameSurName(Input::get('realNameSurName'));
+		$newMember->setAge(Input::get('age'));
+		$newMember->setAddress(Input::get('address'));
+		$newMember->setEmail(Input::get('email'));
+		$newMember->setPetname(Input::get('petName'));
+		$newMember->setPetImage(Input::get('petImage'));
+		$this->mem->saveToDB($newMember);
+		View::make('simple');
+	}
+}
 
 
 	/*
@@ -65,4 +72,4 @@ use member\CoreMember;
 			$mem->save();
 		}
 	}*/
-?>
+	?>
