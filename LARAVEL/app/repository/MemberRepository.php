@@ -15,6 +15,15 @@ class MemberRepository Implements IMemberRepo {
 		return $memIn;
 	}
 */
+
+/*	public function checkSameUserNameOrEmail($memIn){
+		$allMem = \Member::All();
+		foreach ($allMem as $mem) {
+			if($mem->userName == $memIn->getUserName()) return 'Duplicate username';
+			else if ($mem->email == $memIn->getEmail())return 'Duplicatie Email';
+		}
+		return 'NULL';
+	}*/
 	public function saveToDB($memIn){
 		$modelMem = new \Member();
 		$modelMem->userName = $memIn->getUserName();
@@ -26,7 +35,7 @@ class MemberRepository Implements IMemberRepo {
 		$modelMem->petName = $memIn->getPetName();
 		$modelMem->petImage = $memIn->getPetImage();
 		$modelMem->save();
-	}
+		return $memIn;
 }
-
+}
 ?>

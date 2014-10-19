@@ -9,19 +9,43 @@ class MemberController extends BaseController {
 		$newMember = new core\CoreMember();
 		//$newMember = $this->mem->fillInput($newMember);
 		$newMember->setUserName(Input::get('userName'));
-		$newMember->setPassword (Input::get('password'));
+		$newMember->setPassword (Hash::make(Input::get('password')));
 		$newMember->setRealNameSurName(Input::get('realNameSurName'));
 		$newMember->setAge(Input::get('age'));
 		$newMember->setAddress(Input::get('address'));
 		$newMember->setEmail(Input::get('email'));
 		$newMember->setPetname(Input::get('petName'));
 		$newMember->setPetImage(Input::get('petImage'));
+	//	$error = $this->mem->checkSameUsernameOrEmail($newMember);
+	//	if($error== 'NULL'){
 		$this->mem->saveToDB($newMember);
-		View::make('simple');
+		//Auth::login('newMember');
+		return View::make('viewUser') ->with('member',$newMember);
+		//}
+	//	else return View::make('userForm')->with('error',$error);
 	}
+
+	public function logIn(){
+		$inputData = array (
+			'userName' => Input::get('userName'),
+			'password' => Input::get('password'));
+		if (Auth::attempt($inputData))
+			return Redirect::intended('hello');
+		else return View::make('login');
+	}
+
+	public function hello(){
+			if (Auth::check()) return View::make('hello');
+			else return View::make('login');
+	}
+	public function logout(){
+		Auth::logout();
+		return View::make('login');
+	}
+
 }
 
-
+	
 	/*
 	interface Register{
 		public function regis();

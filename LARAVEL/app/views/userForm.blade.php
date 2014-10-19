@@ -3,6 +3,7 @@
  <title>Create User</title>
  </head>
  <body>
+
  <form action="{{ url('/registered') }}" method="post">
 
  <p><label for="username">Username:</label></p>
