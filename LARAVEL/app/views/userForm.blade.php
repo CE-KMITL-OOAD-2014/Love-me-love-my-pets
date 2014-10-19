@@ -4,7 +4,7 @@
  </head>
  <body>
 
- <form action="{{ url('/registered') }}" method="post">
+ <form action="{{ url('/registered') }}" method="post" enctype="multipart/form-data">
 
  <p><label for="username">Username:</label></p>
  <p><input type="text" name="userName" /></p>
@@ -28,8 +28,12 @@
   <p><label for="petName">petName:</label></p>
  <p><input type="text" name="petName"  /></p>
 
+
+ <p><label for="profilePic">profilePic:</label></p>
+ <p><input type="file" name="profilePic"  /></p>
+
  <p><label for="petImage">petImage:</label></p>
- <p><input type="text" name="petImage"  /></p>
+ <p><input type="file" name="petImage"  /></p>
 
  <p><input type="submit" value="Create" /></p>
  </form>

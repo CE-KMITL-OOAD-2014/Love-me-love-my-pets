@@ -1,8 +1,38 @@
 <?php
 namespace repository;
 
-class MemberRepository Implements IMemberRepo {
+class MemberRepository Implements IMemberRepo{
+	public function createAndSavePost($newPost){
+			if($newPost->getPostType()=="findAHomePost"){
+				$modelPost = new \FindAHomePost();
+				$modelPost->petType = $newPost->getPetType();
+				$modelPost->habit = $newPost->getHabit();
+				$modelPost->specificRequire = $newPost->getSpecificRequire();
+			}
+			else if ($newPost->getPostType()=="helpMePost"){
+				$modelPost = new \HelpMePost();
+				$modelPost->petType = $newPost->getPetType();
+				$modelPost->needWhatForHelp = $newPost->getNeedWhatForHelp();
+			}
+			else{ 
+				$modelPost = new \LostPetPost();
+				$modelPost->uniqueApperance = $newPost->getUniqueApperance();
+				$modelPost->timeLost = $newPost->getTimeLost();
+				$modelPost->dateLost = $newPost->getDateLost();
+			}
 
+			$modelPost->userName = $newPost->getUserName();
+			$modelPost->subject = $newPost->getSubject();
+			$modelPost->content = $newPost->getUserName();
+			$modelPost->petName = $newPost->getUserName();
+			$modelPost->petImage = $newPost->getUserName();
+			$modelPost->location = $newPost->getLocation();
+			$modelPost->contact = $newPost->getContact();
+			$modelPost->status = $newPost->getStatus();
+	//		$modelPost->helper = $newPost->getUserName();
+			$modelPost->postType = $newPost->getPostType();
+			$modelPost->save();
+		}
 /*	public function fillInput($memIn){
 		$memIn->userName = Input::get('userName');
 		$memIn->password = Input::get('password');
@@ -34,6 +64,7 @@ class MemberRepository Implements IMemberRepo {
 		$modelMem->email = $memIn->getEmail();
 		$modelMem->petName = $memIn->getPetName();
 		$modelMem->petImage = $memIn->getPetImage();
+		$modelMem->profilePic = $memIn->getProfilePic();
 		$modelMem->save();
 		return $memIn;
 }

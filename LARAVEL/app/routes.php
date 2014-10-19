@@ -17,10 +17,14 @@
 // '/first' and 'first' are the same meaning
 Route::get('/','CommentController@showComments');
 Route::post('/','CommentController@postComments');
+Route::post('/logined','MemberController@logIn');
+Route::get('/hello','MemberController@hello');
+Route::post('/logout','MemberController@logout');
 Route::post('/registered','MemberController@register');
 Route::get('/register',function (){
 	return View::make('userForm');
 });
+Route::post('/createFindAHomePost','PostController@createFindAHomePost');
 
 
 /*

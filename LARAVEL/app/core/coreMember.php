@@ -11,15 +11,14 @@ class CoreMember {
 	private $email;
 	private $petName;
 	private $petImage;
+	private $profilePic;
 
-
-	/*public function createFindAHomePost($memberIn){
-		FindAHomePost newPost = new FindAHomePost();
-		FillValues fillpost = new FillValues();
-		fillpost->fillFindAHomePet($newPost);
-
-	}*/
-
+	public function createPost($newPost){
+		
+	}
+	public function getProfilePic(){
+		return $this->profilePic;
+	}
 	public function getIdUser(){
 		return $this->idUser;
 	}
@@ -70,6 +69,10 @@ class CoreMember {
 
 	public function setRealNameSurName($realNameSurNameIn){
 		$this->realNameSurName = $realNameSurNameIn;
+	}
+
+	public function setProfilePic($profilePicIn){
+		$this->profilePic = $profilePicIn;
 	}
 
 	public function setAge($ageIn){

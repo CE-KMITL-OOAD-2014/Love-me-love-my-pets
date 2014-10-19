@@ -7,6 +7,8 @@ class MemberController extends BaseController {
 	}
 	public function register(){
 		$newMember = new core\CoreMember();
+		$extType = Input::file('petImage')->guessExtension();
+		$extType2 = Input::file('profilePic')->guessExtension();
 		//$newMember = $this->mem->fillInput($newMember);
 		$newMember->setUserName(Input::get('userName'));
 		$newMember->setPassword (Hash::make(Input::get('password')));
@@ -15,12 +17,17 @@ class MemberController extends BaseController {
 		$newMember->setAddress(Input::get('address'));
 		$newMember->setEmail(Input::get('email'));
 		$newMember->setPetname(Input::get('petName'));
-		$newMember->setPetImage(Input::get('petImage'));
+		$newMember->setPetImage(Input::get('userName').".".$extType);
+		$newMember->setProfilePic(Input::get('userName').".".$extType2);
+		Input::file('petImage')->move("storage/pic/picPet",Input::get('userName').".".$extType);
+		Input::file('profilePic')->move("storage/pic/picMember",Input::get('userName').".".$extType2);
+	//	echo "f";
 	//	$error = $this->mem->checkSameUsernameOrEmail($newMember);
 	//	if($error== 'NULL'){
+	//	echo Input::file('petImage')->getMimeType();
 		$this->mem->saveToDB($newMember);
 		//Auth::login('newMember');
-		return View::make('viewUser') ->with('member',$newMember);
+		return View::make('showMember') ->with('member',$newMember);
 		//}
 	//	else return View::make('userForm')->with('error',$error);
 	}
