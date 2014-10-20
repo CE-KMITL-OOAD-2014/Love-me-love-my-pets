@@ -18,13 +18,22 @@
 Route::get('/','CommentController@showComments');
 Route::post('/','CommentController@postComments');
 Route::post('/logined','MemberController@logIn');
-Route::get('/hello','MemberController@hello');
 Route::post('/logout','MemberController@logout');
+Route::post('/postedFindAHome','PostController@createFindAHomePost');
 Route::post('/registered','MemberController@register');
 Route::get('/register',function (){
 	return View::make('userForm');
 });
-Route::post('/createFindAHomePost','PostController@createFindAHomePost');
+Route::get('/login',function (){
+	return View::make('login');
+});
+Route::get('/postFindAHome',array(
+	'before' => 'checkAuth',
+	function()
+	{
+		return View::make('formPostFindAHome');
+	}));
+
 
 
 /*

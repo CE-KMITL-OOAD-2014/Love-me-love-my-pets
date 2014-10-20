@@ -2,7 +2,7 @@
 namespace core;
 
 class CoreMember {
-	private $idUser;
+	private $id;
 	private $userName;
 	private $password;
 	private $realNameSurName;
@@ -12,9 +12,31 @@ class CoreMember {
 	private $petName;
 	private $petImage;
 	private $profilePic;
-
-	public function createPost($newPost){
-		
+	/*private $post;
+	public function __construct (repository\MemberRepository $postIn){
+		$this->post = $postIn;
+	}*/
+	public function updatePost($newPost){
+		$memRepo = new MemberRepository();
+		$memRepo->updataPostt($newPost);
+	}
+	public static function getObjectFromEloquent($model){
+		$mem = new CoreMember();
+		$mem->id = $model->id ;
+		$mem->userName = $model->userName ;
+		$mem->password = $model->password ;
+		$mem->realNameSurName = $model->realNameSurName ;
+		$mem->age = $model->age ;
+		$mem->address = $model->address ;
+		$mem->email = $model->email ;
+		$mem->petName = $model->petName ;
+		$mem->petImage = $model->petImage ;
+		$mem->profilePic = $model->profilePic ;
+		return $mem;
+	}
+	public function createFindAHomePost($newPost){
+		$repo = new \repository\MemberRepository();
+		$idNow =  $repo->createAndSavePost($newPost);
 	}
 	public function getProfilePic(){
 		return $this->profilePic;
@@ -55,8 +77,8 @@ class CoreMember {
 		return $this->petImage;
 	}
 
-	public function setIdUser($idUserIn){
-		$this->idUser = $idUserIn;
+	public function setId($idUserIn){
+		$this->id = $idUserIn;
 	}
 
 	public function setUserName($userNameIn){

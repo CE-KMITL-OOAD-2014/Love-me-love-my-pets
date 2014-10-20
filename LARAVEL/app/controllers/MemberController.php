@@ -37,7 +37,7 @@ class MemberController extends BaseController {
 			'userName' => Input::get('userName'),
 			'password' => Input::get('password'));
 		if (Auth::attempt($inputData))
-			return Redirect::intended('hello');
+			return Redirect::intended('/');
 		else return View::make('login');
 	}
 

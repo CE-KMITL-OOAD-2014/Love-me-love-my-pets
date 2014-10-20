@@ -2,6 +2,12 @@
 namespace repository;
 
 class MemberRepository Implements IMemberRepo{
+
+	public function updataPostt($newPost){
+		$model = User::find($newPost->getIdPost());
+		$model->petImage = $newPost->getPetImage();
+		$model->save();
+	}
 	public function createAndSavePost($newPost){
 			if($newPost->getPostType()=="findAHomePost"){
 				$modelPost = new \FindAHomePost();
@@ -19,19 +25,23 @@ class MemberRepository Implements IMemberRepo{
 				$modelPost->uniqueApperance = $newPost->getUniqueApperance();
 				$modelPost->timeLost = $newPost->getTimeLost();
 				$modelPost->dateLost = $newPost->getDateLost();
+				
 			}
 
 			$modelPost->userName = $newPost->getUserName();
 			$modelPost->subject = $newPost->getSubject();
-			$modelPost->content = $newPost->getUserName();
-			$modelPost->petName = $newPost->getUserName();
-			$modelPost->petImage = $newPost->getUserName();
+			$modelPost->content = $newPost->getContent();
+			$modelPost->petName = $newPost->getPetName();
+			$modelPost->petImage = $newPost->getPetImage();
 			$modelPost->location = $newPost->getLocation();
 			$modelPost->contact = $newPost->getContact();
 			$modelPost->status = $newPost->getStatus();
-	//		$modelPost->helper = $newPost->getUserName();
+			$modelPost->helper = $newPost->getUserName();
 			$modelPost->postType = $newPost->getPostType();
+		
+
 			$modelPost->save();
+
 		}
 /*	public function fillInput($memIn){
 		$memIn->userName = Input::get('userName');
