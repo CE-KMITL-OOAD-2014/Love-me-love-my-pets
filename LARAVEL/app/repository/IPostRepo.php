@@ -1,6 +1,6 @@
 <?php
-	/*namespace repository;
+	namespace repository;
 	interface IPostRepo{
-	public function createAndSavePost($newPost);
-}*/
+	public static function getAllFindAHomePosts();
+}
 ?>

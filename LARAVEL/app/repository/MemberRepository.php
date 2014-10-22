@@ -27,7 +27,6 @@ class MemberRepository Implements IMemberRepo{
 				$modelPost->dateLost = $newPost->getDateLost();
 				
 			}
-
 			$modelPost->userName = $newPost->getUserName();
 			$modelPost->subject = $newPost->getSubject();
 			$modelPost->content = $newPost->getContent();
@@ -36,10 +35,8 @@ class MemberRepository Implements IMemberRepo{
 			$modelPost->location = $newPost->getLocation();
 			$modelPost->contact = $newPost->getContact();
 			$modelPost->status = $newPost->getStatus();
-			$modelPost->helper = $newPost->getUserName();
+			$modelPost->helper = "NULL";
 			$modelPost->postType = $newPost->getPostType();
-		
-
 			$modelPost->save();
 
 		}

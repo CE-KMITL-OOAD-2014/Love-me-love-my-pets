@@ -26,10 +26,9 @@
 				$newPost->setSubject(Input::get('subject'));
 				$newPost->setContent(Input::get('content'));
 				$newPost->setPetName(Input::get('petName'));
-
 				$newPost->setLocation(Input::get('location'));
 				$newPost->setContact(Input::get('contact'));
-				$newPost->setStatus(Input::get('status'));
+				$newPost->setStatus(0);
 				$newPost->setPostType(Input::get('postType'));
 				$rightId = PostController::getRightId(Input::get('postType'));
 				$newPost->setIdPost($rightId);
@@ -68,7 +67,14 @@
 
 		
 			return $maxId;
-	}				
+	}	
+
+
+	public function showFindAHomePost(){
+	//	$allFindAHomeposts = repository\PostRepository::getAllFindAHomePosts();
+		$allFindAHomeposts = \FindAHomePost::all();
+		return View::make('showAllFindAHomePost')->with('findAHomeposts',$allFindAHomeposts);
+	}			
 	}
 
 	

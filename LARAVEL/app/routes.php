@@ -14,25 +14,30 @@
 //before @ = controller's name
 //after @ = function's name
 // because in routing shouldn't have any code
-// '/first' and 'first' are the same meaning
-Route::get('/','CommentController@showComments');
-Route::post('/','CommentController@postComments');
-Route::post('/logined','MemberController@logIn');
-Route::post('/logout','MemberController@logout');
-Route::post('/postedFindAHome','PostController@createFindAHomePost');
-Route::post('/registered','MemberController@register');
-Route::get('/register',function (){
-	return View::make('userForm');
+// '/first' and 'first' are the same meaning+
+Route::get('/',function (){
+	return View::make('home');
 });
-Route::get('/login',function (){
-	return View::make('login');
-});
+
 Route::get('/postFindAHome',array(
 	'before' => 'checkAuth',
 	function()
 	{
 		return View::make('formPostFindAHome');
 	}));
+
+Route::post('/logined','MemberController@logIn');
+Route::get('/logout','MemberController@logout');
+Route::post('/postedFindAHome','PostController@createFindAHomePost');
+Route::post('/registered','MemberController@register');
+Route::get('/register',function (){
+	return View::make('registerForm');
+});
+Route::get('/findAHomePost','PostController@showFindAHomePost');
+Route::get('/login',function (){
+	return View::make('login');
+});
+
 
 
 
