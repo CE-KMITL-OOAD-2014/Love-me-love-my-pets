@@ -26,10 +26,10 @@
     <div class="container">
             <!--One share for one better life.-->
           <div class="dropdown pull-right"><br>
-          <a href="home.html" class="btn btn-warning" type="button">Home</a>
-          <a href="mainPost1.html" class="btn btn-info" type="button">Find A Home Post</a>
-          <a href="mainPost2.html" class="btn btn-success" type="button">Help Me Post</a>
-          <a href="mainPost3.html" class="btn btn-danger" type="button">Lost Pet Post</a>
+          <a href="/" class="btn btn-warning" type="button">Home</a>
+          <a href="/findAHomePost" class="btn btn-info" type="button">Find A Home Post</a>
+          <a href="/helpMePost" class="btn btn-success" type="button">Help Me Post</a>
+          <a href="/lostPetPost" class="btn btn-danger" type="button">Lost Pet Post</a>
                
          
           </div>
@@ -58,7 +58,7 @@
 				</div>
       
             <div class="pull-right">
-                    <a href="FindAHomePost.html" class="btn btn-primary" type="button">+ Create Post</a>
+                    <a href="/postFindAHome" class="btn btn-primary" type="button">+ Create Post</a>
             </div><br>
         
 			</div>
@@ -77,7 +77,7 @@
                     <div class="team boxed-grey">
                         <div class="inner">
                          <?php if($findAHomePost->status == 0){
-                            echo '<span class="glyphicon glyphicon-remove"></span>';}
+                            echo '<div style="color:#d9534f"><span class="glyphicon glyphicon-remove"></div></span>';}
                               else {
                                 echo '<span class="glyphicon glyphicon-ok">
                                 <p class="habit">ผู้ช่วยเหลือ : {{$findAHomePost->helper}} </p>   
@@ -91,7 +91,7 @@
                             <p class="habit">นิสัย : {{$findAHomePost->habit}} </p>
                             <p class="location">สถานที่ : {{$findAHomePost->location}} </p>
                            <div  ><h5>{{$findAHomePost->userName}}</h5></div>
-                            <a href="showFindAHome.html" class="btn btn-default">Read more</a>
+                            <a class="btn btn-default" href={{ "/findAHomePost/".$findAHomePost->id }} >Read more</a>
                         </div>
                     </div>
     				</div>

@@ -39,6 +39,7 @@
 
     <div class="container">
     <div class="col-md-8 col-md-offset-1">
+
           <div class="row">
     
               <div class="wow bounceInDown" data-wow-delay="0.2s">
@@ -54,6 +55,16 @@
     			<div class="col-xs-12">
     				<form action="{{ url('/registered') }}" class="form-horizontal" role="form" method="post" enctype="multipart/form-data">
     		
+     <!--   @foreach($errors->all() as $message)
+          <div class="row">
+                  <div class="form-group">
+                    <div class="col-xs-8 col-md-5">
+                        {{$message}}
+                    </div>
+                  </div>
+                </div>
+        @endforeach-->
+
     					<div class="row">
       						<div class="form-group">
        						<label class="col-xs-8 col-md-2 control-label">Usename</label>
@@ -67,10 +78,19 @@
       						<div class="form-group">
        						<label class="col-xs-8 col-md-2 control-label">Password</label>
         						<div class="col-xs-8 col-md-5">
-          							<input type="password" name="Password" class="form-control" placeholder="รหัสผ่าน" >
+          							<input type="password" name="password" class="form-control" placeholder="รหัสผ่าน" >
         						</div>
         					</div>
       					</div>
+
+           <!--     <div class="row">
+                  <div class="form-group">
+                  <label class="col-xs-8 col-md-2 control-label">ConfirmPassword</label>
+                    <div class="col-xs-8 col-md-5">
+                        <input type="password" name="Password_confirmation" class="form-control" placeholder="ยืนยันรหัสผ่าน" >
+                    </div>
+                  </div>
+                </div>-->
 
       					<div class="row">
       						<div class="form-group">
@@ -105,7 +125,8 @@
                   <div class="form-group">
                   <label class="col-xs-8 col-md-2 control-label">E-Mail</label>
                     <div class="col-xs-8 col-md-5">
-                        <input type="string" name="email"  class="form-control" placeholder="ex: lovedog@gmail.com">
+                        <input type="string" name="email"  class
+                        ="form-control" placeholder="ex: lovedog@gmail.com">
                     </div>
                   </div>
                 </div>

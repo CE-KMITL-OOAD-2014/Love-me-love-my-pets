@@ -74,8 +74,17 @@
 	//	$allFindAHomeposts = repository\PostRepository::getAllFindAHomePosts();
 		$allFindAHomeposts = \FindAHomePost::all();
 		return View::make('showAllFindAHomePost')->with('findAHomeposts',$allFindAHomeposts);
-	}			
 	}
+
+	
+		public function showDetailFindAHomePost($id){
+		$thatPost = \FindAHomePost::find($id);
+	
+		return View::make('showDetailFindAHomePost')->with('thisPost',$thatPost);
+	}
+			
+	}
+
 
 	
 ?>

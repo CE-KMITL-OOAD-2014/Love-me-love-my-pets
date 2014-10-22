@@ -62,7 +62,7 @@ class CoreMember {
 	}
 
 	public function getAddress(){
-		return $this->age;
+		return $this->address;
 	}
 
 	public function getEmail(){

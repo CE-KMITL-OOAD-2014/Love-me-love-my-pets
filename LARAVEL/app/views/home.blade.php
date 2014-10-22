@@ -29,29 +29,9 @@
 			<!--One share for one better life.-->
           <div class="dropdown pull-right"><br>
           <a href="/register" class="btn btn-warning" type="button">Register</a>
-  				<button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown">Sign In
-    			<!-- caret is arrow -->
-    			<span class="caret"></span>
-  				</button>
-  				<ul class="dropdown-menu" style="width:340px" >
-     				 
-	     		
-	              <div class="col-md-12">
-	                <form action= "{{ url('/logined') }}" class="form-signin" role="form"  method="post" >
-	                  <h2 class="form-signin-heading">Please sign in</h2>
-
-	                  <input type="text" name="userName" class="form-control" placeholder="username" >
-	                  <input type="password" name="Password"  class="form-control" placeholder="Password" > <br>
-	          	
-	                  <button class="btn btn-lg btn-primary btn-block" type="submit">login</button>
-	                </form>
-	              </div>
-	            
-          		</ul>
-
-			
-          </div>
-		</div> 
+  				
+  			<a href="/login" class="btn btn-danger" type="button">Log in</a>
+  		
 
 		 <hr>
 
@@ -128,21 +108,21 @@
 				      <img class="img-circle" src="pic1.jpg">
 				      <h3>Find A Home Post</h3>
 				      <p>Tablets, phones, laptops. The new 3 promises to be mobile friendly from the start.</p>
-				      <p><a class="btn btn-default" href="mainPost1.html">View details »</a></p>
+				      <p><a class="btn btn-default" href="/findAHomePost">View details »</a></p>
 				  </div>
 
 				  <div class="col-md-4 text-center">
 				      <img class="img-circle" src="pic2.jpg">
 				      <h3>Help Me Post</h3>
 				      <p>There is now just one percentage-based grid for Bootstrap 3. Customize for fixed widths.</p>
-				      <p><a class="btn btn-default" href="mainPost2.html">View details »</a></p>
+				      <p><a class="btn btn-default" href="/helpMePost">View details »</a></p>
 				  </div>
 
 				  <div class="col-md-4 text-center">
 				      <img class="img-circle" src="pic3.jpg">
 				      <h3>Lost Pet Post</h3>
 				      <p>Improved support for mixins make the new Bootstrap 3 easier to customize.</p>
-				      <p><a class="btn btn-default" href="mainPost3.html">View details »</a></p>
+				      <p><a class="btn btn-default" href="/lostPetPost">View details »</a></p>
 				  </div>
 			</div><!-- /.row -->
 

@@ -6,6 +6,8 @@ class MemberController extends BaseController {
 		$this->mem = $memIn;
 	}
 	public function register(){
+	//	MemberController::checkValidate();\
+	
 		$newMember = new core\CoreMember();
 		$extType = Input::file('petImage')->guessExtension();
 		$extType2 = Input::file('profilePic')->guessExtension();
@@ -27,7 +29,7 @@ class MemberController extends BaseController {
 	//	echo Input::file('petImage')->getMimeType();
 		$this->mem->saveToDB($newMember);
 		//Auth::login('newMember');
-		return View::make('showMember') ->with('member',$newMember);
+		return View::make('showDetailMember') ->with('thisMember',$newMember);
 		//}
 	//	else return View::make('userForm')->with('error',$error);
 	}
@@ -36,9 +38,20 @@ class MemberController extends BaseController {
 		$inputData = array (
 			'userName' => Input::get('userName'),
 			'password' => Input::get('password'));
+		echo var_dump( Hash::check('cat','$2y$10$w9m8EImrrnzxuhQEZDC7f.vXA.aNJez5ofktuZJZ9ZqtIZFxuhm1u') );
 		if (Auth::attempt($inputData))
 			return Redirect::intended('/');
-		else return View::make('login');
+		else return Redirect::to('/login');
+		/*$mem = Member::find(50);
+		echo $mem->userName;
+		echo $mem->password;*/
+	
+		/*echo Hash::make('cat');
+		echo"           ";
+		echo Hash::make('cat');
+		echo"           ";
+		$k = Hash::make('cat');
+		echo var_dump( Hash::check('cat',$k) );*/
 	}
 
 	public function hello(){
@@ -50,9 +63,28 @@ class MemberController extends BaseController {
 		return View::make('login');
 	}
 
-}
+	public static function checkValidate(){
+		$allInput = Input::all();
+		$rules = array(
+	'username' => 'alpha_num|min:3|max:32|unique:userName|userName',
+	'password' => 'confirm|min:3'
+		);
 
-	
+		$validator = Validator::make($allInput, $rules);
+
+		if ($validator->passes()) {
+			
+			echo "hereeeeeeeeeeeeeeeeeeeee";
+		}
+
+
+}
+	public function showDetailMember($id){
+		$thatMember = \Member::find($id);
+		return View::make('showDetailMember')->with('thisMember',$thatMember);
+	}	
+
+	}
 	/*
 	interface Register{
 		public function regis();

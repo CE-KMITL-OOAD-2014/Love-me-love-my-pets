@@ -25,7 +25,7 @@ Route::get('/postFindAHome',array(
 	{
 		return View::make('formPostFindAHome');
 	}));
-
+Route::get('/member/{id}','MemberController@showDetailMember');
 Route::post('/logined','MemberController@logIn');
 Route::get('/logout','MemberController@logout');
 Route::post('/postedFindAHome','PostController@createFindAHomePost');
@@ -34,8 +34,9 @@ Route::get('/register',function (){
 	return View::make('registerForm');
 });
 Route::get('/findAHomePost','PostController@showFindAHomePost');
+Route::get('/findAHomePost/{id}','PostController@showDetailFindAHomePost');
 Route::get('/login',function (){
-	return View::make('login');
+	return View::make('formLogin');
 });
 
 

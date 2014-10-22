@@ -38,7 +38,7 @@ class MemberRepository Implements IMemberRepo{
 			$modelPost->helper = "NULL";
 			$modelPost->postType = $newPost->getPostType();
 			$modelPost->save();
-
+			
 		}
 /*	public function fillInput($memIn){
 		$memIn->userName = Input::get('userName');
