@@ -38,7 +38,7 @@ class MemberRepository Implements IMemberRepo{
 			$modelPost->helper = "NULL";
 			$modelPost->postType = $newPost->getPostType();
 			$modelPost->save();
-			
+			return $modelPost;
 		}
 /*	public function fillInput($memIn){
 		$memIn->userName = Input::get('userName');
@@ -73,7 +73,10 @@ class MemberRepository Implements IMemberRepo{
 		$modelMem->petImage = $memIn->getPetImage();
 		$modelMem->profilePic = $memIn->getProfilePic();
 		$modelMem->save();
-		return $memIn;
+		//echo $modelMem->id;
+		$memIn->setId($modelMem->id);
+
+		return $modelMem;
 }
 }
 ?>

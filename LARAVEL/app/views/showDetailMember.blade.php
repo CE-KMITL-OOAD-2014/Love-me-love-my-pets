@@ -14,10 +14,10 @@
 
 	
 	<div class="container">
-        <div class="dropdown pull-right"><br>
+        
          	<div class="row">
                 <div class="dropdown pull-right"><br>
-                  <a class="btn btn-danger" href=""  type="button">Home</a>
+                  <a class="btn btn-danger" href="/"  type="button">Home</a>
                 
                     <a class="btn btn-default" href="logout"  type="button">Log out</a>
               
@@ -26,7 +26,7 @@
                <br>
               <div class="row">
                 <div class="col-md-12">
-                  <img src="h5.jpg" class="img-responsive">
+                  <img src="/h5.jpg" class="img-responsive">
                 </div>
             </div>
                
@@ -55,7 +55,7 @@
 
 				<div class="row" method="show">
 					<div class="col-xs-8 col-md-4"><strong>Profile Picture</strong></div> 	
-						<p class= "col-xs-11 col-md-6" name = "profilePic" > <img src = {{"/storage/pic/picMember/".$thisMember->getProfilePic()}} > </p><br><br>
+						<p class= "col-xs-11 col-md-6" name = "profilePic" > <img style = "width:300px; height:300px;" src = {{"/storage/pic/picMember/".$thisMember->profilePic}} > </p><br><br>
 				</div>
 
 				<div class="row" method="show">
@@ -63,28 +63,25 @@
 
 
 					<div class="col-xs-8 col-md-4" ><strong>Username</strong></div> 	
-					<p class="col-xs-11 col-md-6" name = "username" >{{$thisMember->getUserName()}} </p><br><br>
-
-					<!--<div class="col-xs-8 col-md-4"><strong>Password</div></strong>	
-					<p class="col-xs-11 col-md-6" name = "Password">{{$thisMember->getPassword()}} </p><br><br>-->
+					<p class="col-xs-11 col-md-6" name = "username" >{{$thisMember->userName}} 
 
 					<div class="col-xs-8 col-md-4" ><strong>RealName</div></strong>	
-					<p class="col-xs-11 col-md-6" name = "RealNameSurname">{{$thisMember->getRealNameSurName()}} </p><br><br>
+					<p class="col-xs-11 col-md-6" name = "RealNameSurname">{{$thisMember->realNameSurName}} </p><br><br>
 
 					<div class="col-xs-8 col-md-4"><strong>Age</div></strong>		
-					<p class="col-xs-11 col-md-6" name = "age"> {{$thisMember->getAge()}}</p><br><br>
+					<p class="col-xs-11 col-md-6" name = "age"> {{$thisMember->age}}</p><br><br>
 
 					<div class="col-xs-8 col-md-4" ><strong>Address</div></strong>	
-					<p class="col-xs-11 col-md-6" name = "address">{{$thisMember->getAddress()}} </p><br><br>
+					<p class="col-xs-11 col-md-6" name = "address">{{$thisMember->address}} </p><br><br>
 
 					<div class="col-xs-8 col-md-4"><strong>E-Mail</div></strong>		
-					<p class="col-xs-11 col-md-6" name = "email">{{$thisMember->getEmail()}} </p><br><br>
+					<p class="col-xs-11 col-md-6" name = "email">{{$thisMember->email}} </p><br><br>
 
 					<div class="col-xs-8 col-md-4" ><strong>PetName</div></strong>	
-					<p class="col-xs-11 col-md-6" name = "petName">{{$thisMember->getPetName()}} </p><br><br>
+					<p class="col-xs-11 col-md-6" name = "petName">{{$thisMember->petName}} </p><br><br>
 
 					<div class="col-xs-8 col-md-4" ><strong>PetImage</div></strong>	
-					<p class="col-xs-11 col-md-6" name = "petImage"> <img src = {{"/storage/pic/picPet/".$thisMember->getPetImage()}}  ></p><br><br>
+					<p class="col-xs-11 col-md-6" name = "petImage"> <img style = "width:300px; height:300px;" src = {{"/storage/pic/picPet/".$thisMember->petImage}}  ></p><br><br>
 
 			</div>
 

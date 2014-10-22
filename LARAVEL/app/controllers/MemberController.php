@@ -7,7 +7,7 @@ class MemberController extends BaseController {
 	}
 	public function register(){
 	//	MemberController::checkValidate();\
-	
+
 		$newMember = new core\CoreMember();
 		$extType = Input::file('petImage')->guessExtension();
 		$extType2 = Input::file('profilePic')->guessExtension();
@@ -27,9 +27,17 @@ class MemberController extends BaseController {
 	//	$error = $this->mem->checkSameUsernameOrEmail($newMember);
 	//	if($error== 'NULL'){
 	//	echo Input::file('petImage')->getMimeType();
-		$this->mem->saveToDB($newMember);
+		$inputData = array (
+			'userName' => Input::get('userName'),
+			'password' => Input::get('password'));
+		$newMember = $this->mem->saveToDB($newMember);
+		//echo $id;
 		//Auth::login('newMember');
-		return View::make('showDetailMember') ->with('thisMember',$newMember);
+		//echo var_dump($newMember);
+		Auth::attempt($inputData);
+		return View::make('showDetailMember')->with('thisMember',$newMember);
+	//	return Redirect::to('/member/'.$id);//->with('thisMember',$newMember);
+		//return Redirect::action('MemberController@showDetailMember', $id);
 		//}
 	//	else return View::make('userForm')->with('error',$error);
 	}
@@ -38,7 +46,7 @@ class MemberController extends BaseController {
 		$inputData = array (
 			'userName' => Input::get('userName'),
 			'password' => Input::get('password'));
-		echo var_dump( Hash::check('cat','$2y$10$w9m8EImrrnzxuhQEZDC7f.vXA.aNJez5ofktuZJZ9ZqtIZFxuhm1u') );
+		//echo var_dump( Hash::check('cat','$2y$10$w9m8EImrrnzxuhQEZDC7f.vXA.aNJez5ofktuZJZ9ZqtIZFxuhm1u') );
 		if (Auth::attempt($inputData))
 			return Redirect::intended('/');
 		else return Redirect::to('/login');
@@ -60,7 +68,7 @@ class MemberController extends BaseController {
 	}
 	public function logout(){
 		Auth::logout();
-		return View::make('login');
+		return Redirect::to('/');
 	}
 
 	public static function checkValidate(){
@@ -81,6 +89,7 @@ class MemberController extends BaseController {
 }
 	public function showDetailMember($id){
 		$thatMember = \Member::find($id);
+	//	echo $thatMember->id;
 		return View::make('showDetailMember')->with('thisMember',$thatMember);
 	}	
 

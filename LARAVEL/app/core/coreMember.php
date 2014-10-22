@@ -36,13 +36,14 @@ class CoreMember {
 	}
 	public function createFindAHomePost($newPost){
 		$repo = new \repository\MemberRepository();
-		$idNow =  $repo->createAndSavePost($newPost);
+		
+		return $repo->createAndSavePost($newPost);
 	}
 	public function getProfilePic(){
 		return $this->profilePic;
 	}
-	public function getIdUser(){
-		return $this->idUser;
+	public function getId(){
+		return $this->id;
 	}
 
 	public function getUserName(){

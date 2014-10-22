@@ -35,7 +35,17 @@
 				$namePic =  $newPost->getPostType().$rightId.".".$extType;
 				$newPost->setPetImage($namePic);
 				Input::file('petImage')->move("storage/pic/picPost/",$namePic);
-				$member->createFindAHomePost($newPost);
+				$newPost = $member->createFindAHomePost($newPost);
+
+				if($newPost->postType=='findAHomePost'){
+					return View::make('showDetailFindAHomePost')->with('thisPost',$newPost);
+				}
+				else if($newPost->postType=='helpMePost'){
+					return View::make('showDetailHelpMePost')->with('thisPost',$newPost);
+				}
+				else{
+					View::make('showDetailLostPetPost')->with('thisPost',$newPost);
+				}
 			//	echo $extType;
 				
 				//$newPost->setPetImage($namePic);

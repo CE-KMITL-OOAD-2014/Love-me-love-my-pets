@@ -88,6 +88,7 @@
                             <div class="avatar">
                             <img src= {{"storage/pic/picPost/".$findAHomePost->petImage}} class="img-responsive" >
                             </div>
+                            <p class="Name">ชื่อสัตว์: {{$findAHomePost->petName}} </p>
                             <p class="habit">นิสัย : {{$findAHomePost->habit}} </p>
                             <p class="location">สถานที่ : {{$findAHomePost->location}} </p>
                            <div  ><h5>{{$findAHomePost->userName}}</h5></div>

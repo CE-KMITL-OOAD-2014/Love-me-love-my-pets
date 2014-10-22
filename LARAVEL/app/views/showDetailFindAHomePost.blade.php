@@ -31,11 +31,11 @@
 
 		        <div class="row">
 			          <div class="dropdown pull-right"><br>
-				          <a href="home.html" class="btn btn-default" type="button">Home</a>
-				          <a href="mainPost1.html" class="btn btn-info" type="button">Find A Home Post</a>
-				          <a href="mainPost2.html" class="btn btn-default" type="button">Help Me Post</a>
-				          <a href="mainPost3.html" class="btn btn-default" type="button">Lost Pet Post</a>
-				          <a href="home.html" class="btn btn-default" type="button">Log out</a>
+				          <a href="/" class="btn btn-default" type="button">Home</a>
+				          <a href="findAHomePost" class="btn btn-info" type="button">Find A Home Post</a>
+				          <a href="helpMePost" class="btn btn-default" type="button">Help Me Post</a>
+				          <a href="lostPetPost" class="btn btn-default" type="button">Lost Pet Post</a>
+				          <a href="logout" class="btn btn-default" type="button">Log out</a>
 				               
 			          </div>
 		         </div>
@@ -92,9 +92,9 @@
 							<div class="col-xs-5 col-md-4" ><strong>สถานะการช่วยเหลือ</div></strong>	
 							<div class="col-xs-7" name = "ีstatus"><?php
 							if($thisPost->status == 0) {echo "ยังไม่ได้รับการช่วยเหลือ"; }
-								else { "ได้รับการช่วยเหลือแล้ว ".
+								else { echo "ได้รับการช่วยเหลือแล้ว ".
 								'<div class="col-xs-5 col-md-4" ><strong>สมาชิกที่ให้ความช่วยเหลือ</div></strong>	
-							<div class="col-xs-7" name = "ีhelper">{{$thisPost->helper}} </div><br><br>';
+							<div class="col-xs-7" name = "ีhelper">'.$thisPost->helper.' </div><br><br>';
 							}
 							
 							?> </div><br><br>
