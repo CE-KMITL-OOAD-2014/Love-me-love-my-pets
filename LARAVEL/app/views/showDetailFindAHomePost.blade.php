@@ -104,10 +104,10 @@
 						
 
 						<section class="section-comment">
-							
+								
 								<header>
 								<hr>
-								<h5 class="fleft"><!-- ตัวแปรจำนวน Comment --> N Comments</h5> 
+								<h5 class="fleft">{{ count($comments) }} Comments</h5> 
 								<p class="fright"><a href="#leavecomment" class="arrow">Leave your comment</a>
 								</p></header>
 							
