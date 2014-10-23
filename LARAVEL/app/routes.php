@@ -25,16 +25,45 @@ Route::get('/postFindAHome',array(
 	{
 		return View::make('formPostFindAHome');
 	}));
+
+
+Route::get('/postHelpMe',array(
+	'before' => 'checkAuth',
+	function()
+	{
+		return View::make('formPostHelpMe');
+	}));
+
+
+Route::get('/postLostPet',array(
+	'before' => 'checkAuth',
+	function()
+	{
+		return View::make('formPostLostPet');
+	}));
+
+
+Route::post('/{postType}/{id}/commented','CommentController@createComment');
+
 Route::get('/member/{id}','MemberController@showDetailMember');
 Route::post('/logined','MemberController@logIn');
 Route::get('/logout','MemberController@logout');
 Route::post('/postedFindAHome','PostController@createFindAHomePost');
+Route::post('/postedHelpMe','PostController@createFindAHomePost');
+Route::post('/postedLostPet','PostController@createFindAHomePost');
 Route::post('/registered','MemberController@register');
 Route::get('/register',function (){
 	return View::make('registerForm');
 });
+
+
 Route::get('/findAHomePost','PostController@showFindAHomePost');
 Route::get('/findAHomePost/{id}','PostController@showDetailFindAHomePost');
+Route::get('/helpMePost','PostController@showHelpMePost');
+Route::get('/helpMePost/{id}','PostController@showDetailHelpMePost');
+Route::get('/lostPetPost','PostController@showlostPetPost');
+Route::get('/lostPetPost/{id}','PostController@showDetailLostPetPost');
+
 Route::get('/login',function (){
 	return View::make('formLogin');
 });

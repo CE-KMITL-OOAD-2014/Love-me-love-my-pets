@@ -50,7 +50,7 @@
 				
 				//$newPost->setPetImage($namePic);
 				//$member->updatePost($newPost);
-			//	echo "good night";
+			//	echo "good night";*/
 				}
 
 
@@ -83,16 +83,52 @@
 	public function showFindAHomePost(){
 	//	$allFindAHomeposts = repository\PostRepository::getAllFindAHomePosts();
 		$allFindAHomeposts = \FindAHomePost::all();
+
 		return View::make('showAllFindAHomePost')->with('findAHomeposts',$allFindAHomeposts);
 	}
+
 
 	
 		public function showDetailFindAHomePost($id){
 		$thatPost = \FindAHomePost::find($id);
-	
-		return View::make('showDetailFindAHomePost')->with('thisPost',$thatPost);
+		$allComments = CommentController::findAllCommentInPost($thatPost);
+		
+		return View::make('showDetailFindAHomePost',array('thisPost'=>$thatPost,'comments'=>$allComments));
+
 	}
-			
+		
+	public function showHelpMePost(){
+	//	$allFindAHomeposts = repository\PostRepository::getAllFindAHomePosts();
+		$allHelpMePosts = \HelpMePost::all();
+		return View::make('showAllHelpMePost')->with('helpMePosts',$allHelpMePosts);
+	}
+
+	
+		public function showDetailHelpMePost($id){
+		$thatPost = \HelpMePost::find($id);
+	
+		return View::make('showDetailHelpMePost')->with('thisPost',$thatPost);
+	}
+
+
+	public function showLostPetPost(){
+	//	$allFindAHomeposts = repository\PostRepository::getAllFindAHomePosts();
+		$allLostPetPosts = \LostPetPost::all();
+		return View::make('showAllLostPetPost')->with('lostPetPosts',$allLostPetPosts);
+	}
+
+	
+		public function showDetailLostPetPost($id){
+		$thatPost = \LostPetPost::find($id);
+	
+		return View::make('showDetailLostPetPost')->with('thisPost',$thatPost);
+	}
+
+
+
+
+
+
 	}
 
 

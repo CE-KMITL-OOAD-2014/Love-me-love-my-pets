@@ -83,3 +83,4 @@ require app_path().'/filters.php';
 
 App::bind('repository\IMemberRepo','repository\MemberRepository');
 App::bind('repository\IPostRepo','repository\PostRepository');
+App::bind('repository\ICommentRepo','repository\CommentRepository');

@@ -1,7 +1,7 @@
 
 <html>
 	<head>
-		<title>Show FindAHome</title>
+		<title>Show HelpMe</title>
 		<link href = "/css/bootstrap.min.css" rel= "stylesheet">
 		<link href = "/css/styles.css" rel= "stylesheet">
 		<link href="/css/modern-business.css" rel="stylesheet">
@@ -23,7 +23,7 @@
 
 
 	<body>
-		
+
 		<header id="navtop">
 		
 			<div class="container">
@@ -31,11 +31,12 @@
 
 		        <div class="row">
 			          <div class="dropdown pull-right"><br>
-				          <a href="/" class="btn btn-default" type="button">Home</a>
+					          <a href="/" class="btn btn-default" type="button">Home</a>
 				          <a href="findAHomePost" class="btn btn-info" type="button">Find A Home Post</a>
 				          <a href="helpMePost" class="btn btn-default" type="button">Help Me Post</a>
 				          <a href="lostPetPost" class="btn btn-default" type="button">Lost Pet Post</a>
 				          <a href="logout" class="btn btn-default" type="button">Log out</a>
+				               
 				               
 			          </div>
 		         </div>
@@ -55,11 +56,11 @@
 							<p>Posted on <span class="created_at">{{$thisPost->created_at}}</span> by <a href="#" class="useName">{{$thisPost->userName}}</a> 
 						
 
-						<div class="row" method="show">
+								<div class="row" method="show">
 							<p class="col-xs-12" name = "petImage"> <img src = {{"/storage/pic/picPost/".$thisPost->petImage}} ></p>
 						</div><br>
 
-						<div class="row" method="show">
+					<div class="row" method="show">
 							<div class="col-xs-5 col-md-4" ><strong>ชื่อของสัตว์</div></strong>  
 							<div class="col-xs-7 " name = "petName" >{{$thisPost->petName}}</div><br><br>
 
@@ -73,23 +74,18 @@
 							<div class="col-xs-5 col-md-4" ><strong>สถานที่</div></strong>		
 							<div class="col-xs-7 " name = "location">{{$thisPost->location}} </div><br><br>
 
-							<div class="col-xs-5 col-md-4" ><strong>ลักษณะนิสัยของสัตว์</div></strong>	
-							<div class="col-xs-7" name = "habit"> {{$thisPost->habit}}</div><br><br>
+							<div class="col-xs-5 col-md-4" ><strong>ความช่วยเหลือที่ต้องการ</div></strong>	
+							<div class="col-xs-7" name = "needWhatForHelp">{{$thisPost->needWhatForHelp}}</div><br><br>
 
 						</div>
-						<div class="row" method="show">
-
-							<div class="col-xs-5 col-md-4" ><strong>ความต้องการพิเศษ</div></strong>		
-							<div class="col-xs-7" name = "specificRequire"> {{$thisPost->specificRequire}}</div><br><br>
-
-						</div>
+						
 						<div class="row" method="show">
 							<div class="col-xs-5 col-md-4" ><strong>ติดต่อกลับ</div></strong>	
 							<div class="col-xs-7" name = "contact">{{$thisPost->contact}} </div><br><br>
 
 
 					
-							<div class="col-xs-5 col-md-4" ><strong>สถานะการช่วยเหลือ</div></strong>	
+					<div class="col-xs-5 col-md-4" ><strong>สถานะการช่วยเหลือ</div></strong>	
 							<div class="col-xs-7" name = "ีstatus"><?php
 							if($thisPost->status == 0) {echo "ยังไม่ได้รับการช่วยเหลือ"; }
 								else { echo "ได้รับการช่วยเหลือแล้ว ".
@@ -98,8 +94,6 @@
 							}
 							
 							?> </div><br><br>
-
-							
 
 
 						</div>
@@ -114,20 +108,37 @@
 								</p></header>
 							
 								<ol class="comments">
-
-								 @foreach($comments as $comment)
 									<li class="comment">
-								<p name = "content"> {{$comment->content }}</p>
-								<p name = "feeling"> feeling: {{$comment->feeling}} </p>
-								<h6 name = "userName" >{{$comment->userName}} <span name ="created_at"> {{$comment->created_at}}</span></h6>
-			
-								  @endforeach
+										<h6 name = "userName" >Anpan <span name ="created_at"> on 21/10/2557 </span></h6>
+										<p name = "content"> Commentssssssssss </p>
+									</li>
+									
+									<li class="comment">
+										<h6 name = "userName"> <span name ="created_at"> on </span></h6>
+										<p name = "content"> </p>
+									</li>
+									
+									<li class="comment">
+										<h6 name = "userName"> <span name ="created_at"> on </span></h6>
+										<p name = "content"> </p>
+									</li>
+									
+									<li class="comment">
+										<h6 name = "userName"> <span name ="created_at"> on </span></h6>
+										<p name = "content"> </p>
+									</li>
+									
+									<li class="comment">
+										<h6 name = "userName"> <span name ="created_at"> on </span></h6>
+										<p name = "content"> </p>
+									</li>
+							
 								</ol>
 						
 							<hr>
 							<div class="leavecomment" id="leavecomment">
 								<h3>Leave your comment</h3>
-								<form action= {{"/findAHomePost/".$thisPost->id."/commented"}} method="post" name="#">
+								<form class="#" action="#" method="post" name="#">
 									<ul>
 								
 										<li>

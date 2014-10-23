@@ -4,58 +4,58 @@ namespace core;
 
 	class CoreComment{
 		private $id;
-		private $userName;
+		private $member;
 		private $post;
 		private $content;
 		private $feeling;
 		private $created_at;
 
 		public function getId(){
-			return $id;
+			return $this->id;
 		}
 
 		public function getPost(){
-			return $post;
+			return $this->post;
 		}
 
-		public function getUserName(){
-			return $userName;
+		public function getMember(){
+			return $this->member;
 		}
 
 		public function getContent(){
-			return $content;
+			return $this->content;
 		}
 
 		public function getFeeling(){
-			return $feeling;
+			return $this->feeling;
 		}
 
 		public function getCreatedAt(){
-			return $created_at;
+			return $this->created_at;
 		}
 
 		public function setIdPost($postIn){
-			$post = $postIn;
+			$this->post = $postIn;
 		}
 
 		public function setId($idIn){
-			$id = $idIn;
+			$this->id = $idIn;
 		}
 
-		public function setUserName($userNameIn){
-			$userName = $userNameIn;
+		public function setMember($memberIn){
+			$this->member = $memberIn;
 		}
 
 		public function setContent($contentIn){
-			$content = $contentIn;
+			$this->content = $contentIn;
 		}
 
 		public function setFeeling($feelingIn){
-			$feeling = $feelingIn;
+			$this->feeling = $feelingIn;
 		}
 
 		public function setCreatedAt($created_atIn){
-			$created_at = $created_atIn;
+			$this->created_at = $created_atIn;
 		}
 	}
 ?>
