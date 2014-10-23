@@ -21,8 +21,9 @@
 
 </head>
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-custom" >
 
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom" >
+    @include('head')
     <div class="container">
             <!--One share for one better life.-->
           <div class="dropdown pull-right"><br>
@@ -30,7 +31,7 @@
           <a href="/findAHomePost" class="btn btn-info" type="button">Find A Home Post</a>
           <a href="/helpMePost" class="btn btn-success" type="button">Help Me Post</a>
           <a href="/lostPetPost" class="btn btn-danger" type="button">Lost Pet Post</a>
-                  <a href="home.html" class="btn btn-default" type="button">Log out</a>
+               
          
           </div>
     </div> 

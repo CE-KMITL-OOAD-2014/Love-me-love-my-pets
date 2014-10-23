@@ -23,19 +23,17 @@
 
 
 	<body>
-		
+			@include('head')
 		<header id="navtop">
 		
 			<div class="container">
-
-
 		        <div class="row">
 			          <div class="dropdown pull-right"><br>
 				          <a href="/" class="btn btn-default" type="button">Home</a>
-				          <a href="findAHomePost" class="btn btn-info" type="button">Find A Home Post</a>
-				          <a href="helpMePost" class="btn btn-default" type="button">Help Me Post</a>
-				          <a href="lostPetPost" class="btn btn-default" type="button">Lost Pet Post</a>
-				          <a href="logout" class="btn btn-default" type="button">Log out</a>
+				          <a href="/findAHomePost" class="btn btn-info" type="button">Find A Home Post</a>
+				          <a href="/helpMePost" class="btn btn-default" type="button">Help Me Post</a>
+				          <a href="/lostPetPost" class="btn btn-default" type="button">Lost Pet Post</a>
+				  
 				               
 			          </div>
 		         </div>
@@ -56,7 +54,7 @@
 						
 
 						<div class="row" method="show">
-							<p class="col-xs-12" name = "petImage"> <img src = {{"/storage/pic/picPost/".$thisPost->petImage}} ></p>
+							<p class="col-xs-12" name = "petImage"> <img style = "width:800; height:600px;" src = {{"/storage/pic/picPost/".$thisPost->petImage}} ></p>
 						</div><br>
 
 						<div class="row" method="show">
@@ -125,9 +123,11 @@
 								</ol>
 						
 							<hr>
-							<div class="leavecomment" id="leavecomment">
+
+							<?php if(Auth::check()) {
+								echo '<div class="leavecomment" id="leavecomment">
 								<h3>Leave your comment</h3>
-								<form action= {{"/findAHomePost/".$thisPost->id."/commented"}} method="post" name="#">
+								<form action= "/findAHomePost/'.$thisPost->id.'/commented" method="post" name="#">
 									<ul>
 								
 										<li>
@@ -143,7 +143,11 @@
 										
 									</ul>			
 								</form>
-							</div>
+							</div>';
+							}
+
+							?>
+				
 							
 						</section>
 						<hr>

@@ -149,7 +149,16 @@
               </div>
             </div>
 
-    
+      
+           <div class="row">
+              <div class="form-group">
+              <label class="col-xs-8 col-md-3 control-label">ประเภทของโพสต์</label>
+                <div class="col-xs-11 col-md-6">
+                    <input type="string" name="postType"  value = 'helpMePost' class="form-control">
+                </div>
+              </div>
+            </div>
+
             <div class="row">
             <div class="form-group">
                 <div class="col-md-offset-3 col-md-4">

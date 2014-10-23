@@ -19,7 +19,7 @@ class CreateLostPetPostsTable extends Migration {
 				$table->string('content');
 				$table->string('petName');
 				$table->string('petImage');
-				$table->integer('location');
+				$table->string('location');
 				$table->string('contact');
 				$table->string('status');
 				$table->string('helper');

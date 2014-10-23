@@ -38,13 +38,13 @@
 				$newPost = $member->createFindAHomePost($newPost);
 
 				if($newPost->postType=='findAHomePost'){
-					return View::make('showDetailFindAHomePost')->with('thisPost',$newPost);
+					return Redirect::to('/findAHomePost/'.$newPost->id);
 				}
 				else if($newPost->postType=='helpMePost'){
-					return View::make('showDetailHelpMePost')->with('thisPost',$newPost);
+					return Redirect::to('/helpMePost/'.$newPost->id);
 				}
 				else{
-					View::make('showDetailLostPetPost')->with('thisPost',$newPost);
+					return Redirect::to('/lostPetPost/'.$newPost->id);
 				}
 			//	echo $extType;
 				
@@ -106,8 +106,8 @@
 	
 		public function showDetailHelpMePost($id){
 		$thatPost = \HelpMePost::find($id);
-	
-		return View::make('showDetailHelpMePost')->with('thisPost',$thatPost);
+		$allComments = CommentController::findAllCommentInPost($thatPost);
+		return View::make('showDetailHelpMePost',array('thisPost'=>$thatPost,'comments'=>$allComments));
 	}
 
 
@@ -120,8 +120,8 @@
 	
 		public function showDetailLostPetPost($id){
 		$thatPost = \LostPetPost::find($id);
-	
-		return View::make('showDetailLostPetPost')->with('thisPost',$thatPost);
+		$allComments = CommentController::findAllCommentInPost($thatPost);
+		return View::make('showDetailLostPetPost',array('thisPost'=>$thatPost,'comments'=>$allComments));
 	}
 
 

@@ -32,10 +32,10 @@
 		        <div class="row">
 			          <div class="dropdown pull-right"><br>
 					          <a href="/" class="btn btn-default" type="button">Home</a>
-				          <a href="findAHomePost" class="btn btn-info" type="button">Find A Home Post</a>
-				          <a href="helpMePost" class="btn btn-default" type="button">Help Me Post</a>
-				          <a href="lostPetPost" class="btn btn-default" type="button">Lost Pet Post</a>
-				          <a href="logout" class="btn btn-default" type="button">Log out</a>
+				          <a href="/findAHomePost" class="btn btn-default" type="button">Find A Home Post</a>
+				          <a href="/helpMePost" class="btn btn-success" type="button">Help Me Post</a>
+				          <a href="/lostPetPost" class="btn btn-default" type="button">Lost Pet Post</a>
+				          <a href="/logout" class="btn btn-default" type="button">Log out</a>
 				               
 				               
 			          </div>
@@ -57,7 +57,7 @@
 						
 
 								<div class="row" method="show">
-							<p class="col-xs-12" name = "petImage"> <img src = {{"/storage/pic/picPost/".$thisPost->petImage}} ></p>
+							<p class="col-xs-12" name = "petImage"> <img style = "width:800; height:600px;" src = {{"/storage/pic/picPost/".$thisPost->petImage}} ></p>
 						</div><br>
 
 					<div class="row" method="show">
@@ -99,7 +99,7 @@
 						</div>
 						
 
-						<section class="section-comment">
+							<section class="section-comment">
 							
 								<header>
 								<hr>
@@ -108,37 +108,21 @@
 								</p></header>
 							
 								<ol class="comments">
+
+								 @foreach($comments as $comment)
 									<li class="comment">
-										<h6 name = "userName" >Anpan <span name ="created_at"> on 21/10/2557 </span></h6>
-										<p name = "content"> Commentssssssssss </p>
-									</li>
-									
-									<li class="comment">
-										<h6 name = "userName"> <span name ="created_at"> on </span></h6>
-										<p name = "content"> </p>
-									</li>
-									
-									<li class="comment">
-										<h6 name = "userName"> <span name ="created_at"> on </span></h6>
-										<p name = "content"> </p>
-									</li>
-									
-									<li class="comment">
-										<h6 name = "userName"> <span name ="created_at"> on </span></h6>
-										<p name = "content"> </p>
-									</li>
-									
-									<li class="comment">
-										<h6 name = "userName"> <span name ="created_at"> on </span></h6>
-										<p name = "content"> </p>
-									</li>
-							
+								<p name = "content"> {{$comment->content }}</p>
+								<p name = "feeling"> feeling: {{$comment->feeling}} </p>
+								<h6 name = "userName" >{{$comment->userName}} <span name ="created_at"> {{$comment->created_at}}</span></h6>
+			
+								  @endforeach
 								</ol>
 						
 							<hr>
-							<div class="leavecomment" id="leavecomment">
+							<?php if(Auth::check()) {
+								echo '<div class="leavecomment" id="leavecomment">
 								<h3>Leave your comment</h3>
-								<form class="#" action="#" method="post" name="#">
+								<form action= "/helpMePost/'.$thisPost->id.'/commented" method="post" name="#">
 									<ul>
 								
 										<li>
@@ -154,8 +138,10 @@
 										
 									</ul>			
 								</form>
-							</div>
-							
+							</div>';
+							}
+
+							?>
 						</section>
 						<hr>
 

@@ -23,14 +23,14 @@
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-custom" >
 
-
+@include('head')
     <div class="container">
         <div class="dropdown pull-right"><br>
             <a href="/" class="btn btn-warning" type="button">Home</a>
           <a href="/findAHomePost" class="btn btn-info" type="button">Find A Home Post</a>
           <a href="/helpMePost" class="btn btn-success" type="button">Help Me Post</a>
           <a href="/lostPetPost" class="btn btn-danger" type="button">Lost Pet Post</a>
-                  <a href="home.html" class="btn btn-default" type="button">Log out</a>
+                 
           </div>
     </div> 
     <div style ="background-color:#d9fbcf">
@@ -41,7 +41,7 @@
 
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2">
-					<div class="wow bounceInDown" data-wow-delay="0.4s">
+					<div class="wow bounceInDown" data-wow-delay="0.2s">
 					<div class="section-heading">
                     <h2>Main Post</h2>
 			        <div style="color:#5cb85c"><h3>Help Me Post</h3></div>
@@ -58,7 +58,7 @@
 				</div>
 
             <div class="pull-right">
-                <a href="HelpMePost.html" class="btn btn-primary" type="button">+ Create Post</a>
+                <a href="/postHelpMe" class="btn btn-primary" type="button">+ Create Post</a>
             </div><br>
 
 			</div>
@@ -94,10 +94,9 @@
                     </div>
     				</div>
                 </div>
-
-               
+                      @endforeach
             </div>
-    			  @endforeach
+    		
             <br><br>
 
         
