@@ -102,7 +102,7 @@
 							
 							?> </div>
 
-
+ </div>
 							<br><br>
 
 							
@@ -125,7 +125,11 @@
 									<li class="comment">
 								<p name = "content"> {{$comment->content }}</p>
 								<p name = "feeling"> feeling: {{$comment->feeling}} </p>
-								<h6 name = "userName" >{{$comment->userName}} <span name ="created_at"> {{$comment->created_at}}</span></h6>
+								<img style = "width:100; height:100px;" src = <?php $mem = \Member::find($comment->idUser); echo '"/storage/pic/picMember/'.$mem->profilePic.'"' ; ?> ></p>
+								<a href = {{ "/member/".$comment->idUser}}>
+								<h6 name = "userName" >
+								<?php $mem = \Member::find($comment->idUser); echo $mem->userName; ?></a>
+								<span name ="created_at"> {{$comment->created_at}}</span></h6>
 			
 								  @endforeach
 								</ol>

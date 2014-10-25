@@ -3,7 +3,7 @@ namespace repository;
 	class CommentRepository implements ICommentRepo{
 		public function createComment($memIn,$postIn,$commentIn){
 			$modelComment = new \Comment();
-			$modelComment->userName = $memIn->userName;
+			$modelComment->idUser = $memIn->id;
 			$modelComment->postType = $postIn->postType;
 			$modelComment->postId = $postIn->id;
 			$modelComment->content = $commentIn->getContent();
