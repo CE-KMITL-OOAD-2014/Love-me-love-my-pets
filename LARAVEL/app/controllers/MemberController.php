@@ -93,7 +93,46 @@ class MemberController extends BaseController {
 		return View::make('showDetailMember')->with('thisMember',$thatMember);
 	}	
 
+	
+
+	public function editProfile(){
+		$thisMem = Auth::user();
+		return View::make('editForm')->with('thisMember',$thisMem);
 	}
+
+	public function editedProfile(){
+			$mem = new core\CoreMember();
+			$editMem = Auth::user();
+		If(Input::file('petImage')!=NULL){
+			$extType = Input::file('petImage')->guessExtension();
+			$mem->setPetImage(Input::get('userName').".".$extType);
+		}
+		else{
+			$mem->setPetImage(($editMem->petImage));
+		}
+		If(Input::file('profilePic')!=NULL){
+			$extType2 = Input::file('profilePic')->guessExtension();
+			$mem->setProfilePic(Input::get('userName').".".$extType2);
+		}
+		else{
+			$mem->setProfilePic(($editMem->profilePic));
+		}
+
+		
+	
+		$mem->setUserName(Input::get('userName'));
+		$mem->setRealNameSurName(Input::get('realNameSurName'));
+		$mem->setAge(Input::get('age'));
+		$mem->setAddress(Input::get('address'));
+		$mem->setEmail(Input::get('email'));
+		$mem->setPetname(Input::get('petName'));
+
+	
+		if( (Input::file('petImage')!=NULL)) Input::file('petImage')->move("storage/pic/picPet",Input::get('userName').".".$extType);
+		if( (Input::file('profilePic')!=NULL))Input::file('profilePic')->move("storage/pic/picMember",Input::get('userName').".".$extType2);
+		$mem->editProfile($mem);
+		return Redirect::to('/member/'.$editMem->id);
+	}}
 	/*
 	interface Register{
 		public function regis();

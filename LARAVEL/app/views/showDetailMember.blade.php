@@ -19,7 +19,7 @@
                 <div class="dropdown pull-right"><br>
                   <a class="btn btn-danger" href="/"  type="button">Home</a>
                 
-                    <a class="btn btn-default" href="logout"  type="button">Log out</a>
+                    <a class="btn btn-default" href="/logout"  type="button">Log out</a>
               
                 </div>
             </div>
@@ -51,7 +51,14 @@
 
           <div class="col-xs-12">
 
-			<div class="col-xs-offset-10"> <button type="button" class="btn btn-link">edit</button> </div>
+          <?php 
+
+          if(Auth::user()->id==$thisMember->id) echo '
+			<div class="col-xs-offset-10"> 
+			<a class="btn btn-danger" href="/editProfile" type="button" >edit</a> </div>';
+
+			?>
+				
 
 				<div class="row" method="show">
 					<div class="col-xs-8 col-md-4"><strong>Profile Picture</strong></div> 	
@@ -85,8 +92,6 @@
 
 			</div>
 
-					<div class="col-xs-offset-10"> 
-					<button type="button" class="btn btn-link">Save my profile</button> </div>
  		
 
           </div>

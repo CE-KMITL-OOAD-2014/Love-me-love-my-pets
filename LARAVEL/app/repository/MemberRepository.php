@@ -8,6 +8,19 @@ class MemberRepository Implements IMemberRepo{
 		$model->petImage = $newPost->getPetImage();
 		$model->save();
 	}
+
+	public function saveProfileEdit($updateMem){
+		$oldMem = \Member::find(\Auth::user()->id);
+		$oldMem->userName = $updateMem->getUserName();
+		$oldMem->realNameSurName = $updateMem->getRealNameSurName();
+		$oldMem->age = $updateMem->getAge();
+		$oldMem->address = $updateMem->getAddress();
+		$oldMem->email = $updateMem->getEmail();
+		$oldMem->petName = $updateMem->getPetName();
+		$oldMem->petImage = $updateMem->getPetImage();
+		$oldMem->profilePic = $updateMem->getProfilePic();
+		$oldMem->save();
+	}
 	public function createAndSavePost($newPost){
 			if($newPost->getPostType()=="findAHomePost"){
 				$modelPost = new \FindAHomePost();

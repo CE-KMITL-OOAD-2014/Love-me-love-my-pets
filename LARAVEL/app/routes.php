@@ -47,7 +47,7 @@ Route::get('/postLostPet',array(
 
 
 Route::post('/{postType}/{id}/commented','CommentController@createComment');
-
+Route::post('/edited','MemberController@editedProfile');
 Route::get('/member/{id}','MemberController@showDetailMember');
 Route::post('/logined','MemberController@logIn');
 Route::get('/logout','MemberController@logout');
@@ -59,7 +59,7 @@ Route::get('/register',function (){
 	return View::make('registerForm');
 });
 
-
+Route::get('/editProfile','MemberController@editProfile');
 Route::get('/findAHomePost','PostController@showFindAHomePost');
 Route::get('/findAHomePost/{id}','PostController@showDetailFindAHomePost');
 Route::get('/helpMePost','PostController@showHelpMePost');

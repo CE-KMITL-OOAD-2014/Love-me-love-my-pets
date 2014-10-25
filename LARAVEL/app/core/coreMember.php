@@ -39,6 +39,11 @@ class CoreMember {
 		
 		return $repo->createAndSavePost($newPost);
 	}
+
+	public function editProfile($updateMem){
+		$repo = new \repository\MemberRepository();
+		$repo->saveProfileEdit($updateMem);
+	}
 	public function getProfilePic(){
 		return $this->profilePic;
 	}
