@@ -91,5 +91,10 @@ class MemberRepository Implements IMemberRepo{
 
 		return $modelMem;
 }
+	public function helpPostSave($thatPost,$userNameHelper){
+		$thatPost->status = '1';
+		$thatPost->helper = $userNameHelper;
+		$thatPost->save();
+	}
 }
 ?>

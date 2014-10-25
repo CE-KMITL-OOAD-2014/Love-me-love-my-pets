@@ -7,4 +7,5 @@ interface IMemberRepo {
 	public function createAndSavePost($newPost);
 	//public function checkSameUserNameOrEmail($memIn);
 	public function saveProfileEdit($updateMem);
+		public function helpPostSave($thatPost,$userNameHelper);
 }

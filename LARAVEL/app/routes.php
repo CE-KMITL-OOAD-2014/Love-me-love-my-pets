@@ -66,11 +66,13 @@ Route::get('/helpMePost','PostController@showHelpMePost');
 Route::get('/helpMePost/{id}','PostController@showDetailHelpMePost');
 Route::get('/lostPetPost','PostController@showlostPetPost');
 Route::get('/lostPetPost/{id}','PostController@showDetailLostPetPost');
-
+Route::get('/thanks',function(){
+	return View::make('thanks');
+});
 Route::get('/login',function (){
 	return View::make('formLogin');
 });
-
+Route::post('/helpedPost','MemberController@helpPost');
 
 
 

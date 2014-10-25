@@ -83,11 +83,16 @@
                     <div class="team boxed-grey">
                         <div class="inner">
                          <?php if($lostPetPost->status == 0){
-                            echo '<div style="color:#d9534f"><span class="glyphicon glyphicon-remove"></div></span>';}
+                            echo '<form action="/helpedPost" method="POST">
+                              <input type="hidden" name = "postType" value="lostPetPost">
+                              <input type="hidden" name = "id" value='. $lostPetPost->id.' >
+                            <div style="color:#d9534f"><font size="20"><button class="glyphicon glyphicon-remove" type="submit" value="Submit">
+                            </button></font></div></form>';
+                        }
                               else {
-                                echo '<span class="glyphicon glyphicon-ok">
-                                <p class="habit">ผู้ช่วยเหลือ : '.$lostPetPost->helper. '</p>   
-                                </span>'; 
+                                echo '<div style="color:#01DF01"><font size="20"><span class="glyphicon glyphicon-ok">
+                                <p class="habit">ผู้ช่วยเหลือ:'.$lostPetPost->helper.'</p>   
+                                </span></font></div>'; 
                             }
                             ?>
                            <p class="subject">{{$lostPetPost->subject}}</p>
@@ -100,7 +105,7 @@
                            <div  ><h5>{{$lostPetPost->userName}}</h5></div>
                                   <a  class="btn btn-primary btn-sm " 
                                 href="http://www.facebook.com/sharer.php?u= www.google.com">
-                                    <i class="fa fa-facebook-square fa-6"></i>
+                                     <font size="4"> <i class="fa fa-facebook-square fa-6"></i></font>
                                  Share FB
                             </a>
                             <a class="btn btn-default" href={{ "/lostPetPost/".$lostPetPost->id }} >Read more</a>

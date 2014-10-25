@@ -93,14 +93,21 @@
 
 					
 							<div class="col-xs-5 col-md-4" ><strong>สถานะการช่วยเหลือ</div></strong>	
-							<div class="col-xs-7" name = "ีstatus"><?php
+								<div class="col-xs-7" name = "status"><?php
 							if($thisPost->status == 0) {echo "ยังไม่ได้รับการช่วยเหลือ"; }
-								else { echo "ได้รับการช่วยเหลือแล้ว ".
+
+							else { 
+								echo "ได้รับการช่วยเหลือแล้ว ".'</div><br><br>'.
+
+
+
 								'<div class="col-xs-5 col-md-4" ><strong>สมาชิกที่ให้ความช่วยเหลือ</div></strong>	
 							<div class="col-xs-7" name = "ีhelper">'.$thisPost->helper.' </div><br><br>';
 							}
 							
-							?> </div><br><br>
+							?> </div>
+
+							<br><br></div>
 
 						</div>
 						
@@ -109,7 +116,7 @@
 							
 								<header>
 								<hr>
-								<h5 class="fleft"><!-- ตัวแปรจำนวน Comment --> N Comments</h5> 
+								<h5 class="fleft">{{ count($comments)." Comments" }}</h5> 
 								<p class="fright"><a href="#leavecomment" class="arrow">Leave your comment</a>
 								</p></header>
 							

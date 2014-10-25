@@ -40,6 +40,10 @@ class CoreMember {
 		return $repo->createAndSavePost($newPost);
 	}
 
+	public function helpPost($thatPost,$userNameHelper){
+		$repo = new \repository\MemberRepository();
+		$repo->helpPostSave($thatPost,$userNameHelper);
+	}
 	public function editProfile($updateMem){
 		$repo = new \repository\MemberRepository();
 		$repo->saveProfileEdit($updateMem);

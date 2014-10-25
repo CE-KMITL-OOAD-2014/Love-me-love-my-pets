@@ -110,7 +110,7 @@
 				  <div class="col-md-4 text-center">
 				      <img class="img-circle" src="pic2.jpg">
 				      <h3>Help Me Post</h3>
-				      <p>Let's help them for the better life</p>
+				      <p>Let's help them for their better life</p>
 				      <p><a class="btn btn-default" href="/helpMePost">View details »</a></p>
 				  </div>
 

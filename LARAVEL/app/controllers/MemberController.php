@@ -132,7 +132,18 @@ class MemberController extends BaseController {
 		if( (Input::file('profilePic')!=NULL))Input::file('profilePic')->move("storage/pic/picMember",Input::get('userName').".".$extType2);
 		$mem->editProfile($mem);
 		return Redirect::to('/member/'.$editMem->id);
-	}}
+	}
+
+	public function helpPost(){
+		if(Input::get('postType')=='helpMePost')$thatPost=\HelpMePost::find(Input::get('id'));
+		else if(Input::get('postType')=='findAHomePost')$thatPost=\FindAHomePost::find(Input::get('id'));
+		else $thatPost=\LostPetPost::find(Input::get('id'));
+		$memberHelp = \Member::find(Auth::user()->id);
+		$memCore = core\CoreMember::getObjectFromEloquent($memberHelp);
+		$memCore->helpPost($thatPost,$memberHelp->userName);
+		return Redirect::to('/thanks');
+	}
+}
 	/*
 	interface Register{
 		public function regis();

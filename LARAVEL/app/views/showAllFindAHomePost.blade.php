@@ -77,12 +77,17 @@
     				<div class="wow bounceInUp" data-wow-delay="0.2s">
                     <div class="team boxed-grey">
                         <div class="inner">
-                         <?php if($findAHomePost->status == 0){
-                            echo '<div style="color:#d9534f"><span class="glyphicon glyphicon-remove"></div></span>';}
+                                <?php if($findAHomePost->status == 0){
+                            echo '<form action="/helpedPost" method="POST">
+                              <input type="hidden" name = "postType" value="findAHomePost">
+                              <input type="hidden" name = "id" value='. $findAHomePost->id.' >
+                            <div style="color:#d9534f"><font size="20"><button class="glyphicon glyphicon-remove" type="submit" value="Submit">
+                            </button></font></div></form>';
+                        }
                               else {
-                                echo '<span class="glyphicon glyphicon-ok">
-                                <p class="habit">ผู้ช่วยเหลือ :' .$findAHomePost->helper.'</p>   
-                                </span>'; 
+                                echo '<div style="color:#01DF01"><font size="20"><span class="glyphicon glyphicon-ok">
+                                <p class="habit">ผู้ช่วยเหลือ:'.$findAHomePost->helper.'</p>   
+                                </span></font></div>'; 
                             }
                             ?>
                             <p class="subject">{{$findAHomePost->subject}}</p>
@@ -95,8 +100,7 @@
                            <div  ><h5>{{$findAHomePost->userName}}</h5></div>
                             <a  class="btn btn-primary btn-sm " 
                                 href="http://www.facebook.com/sharer.php?u= www.google.com">
-                                    <i class="fa fa-facebook-square fa-6"></i>
-                                 Share FB
+                                   <font size="4"> <i class="fa fa-facebook-square fa-6"></i></font>  Share FB
                             </a>
 
                             <a class="btn btn-default" href={{ "/findAHomePost/".$findAHomePost->id }} >Read more</a>
