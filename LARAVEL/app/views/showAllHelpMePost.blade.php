@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Main Post2</title>
+    <title>Help Me Post</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -89,6 +89,11 @@
                             <p class="habit">นิสัย : {{$helpMePost->needWhatForHelp}} </p>
                             <p class="location">สถานที่ : {{$helpMePost->location}} </p>
                            <div  ><h5>{{$helpMePost->userName}}</h5></div>
+                                   <a  class="btn btn-primary btn-sm " 
+                                href="http://www.facebook.com/sharer.php?u= www.google.com">
+                                    <i class="fa fa-facebook-square fa-6"></i>
+                                 Share FB
+                            </a>
                             <a class="btn btn-default" href={{ "/helpMePost/".$helpMePost->id }} >Read more</a>
                         </div>
                     </div>
@@ -106,7 +111,8 @@
 	</section>
 	<!-- /Section: about -->
 
+</div>
 
 </body>
-
+<footer>@include('footer')</footer>
 </html>

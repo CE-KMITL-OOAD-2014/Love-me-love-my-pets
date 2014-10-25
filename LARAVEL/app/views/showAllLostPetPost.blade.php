@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Main Post3</title>
+    <title>Lost Pet Post</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -98,6 +98,11 @@
                             <p class="habit">นิสัย : {{$lostPetPost->uniqueApperance}} </p>
                             <p class="location">สถานที่ : {{$lostPetPost->location}} </p>
                            <div  ><h5>{{$lostPetPost->userName}}</h5></div>
+                                  <a  class="btn btn-primary btn-sm " 
+                                href="http://www.facebook.com/sharer.php?u= www.google.com">
+                                    <i class="fa fa-facebook-square fa-6"></i>
+                                 Share FB
+                            </a>
                             <a class="btn btn-default" href={{ "/lostPetPost/".$lostPetPost->id }} >Read more</a>
                         </div>
                     </div>
@@ -116,8 +121,9 @@
 
 	</section>
 	<!-- /Section: about -->
+</div>
 
 
 </body>
-
+<footer>@include('footer')</footer>
 </html>

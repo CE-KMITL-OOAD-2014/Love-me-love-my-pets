@@ -176,5 +176,5 @@
 
 
 
-	</body>
+	</body>     <footer> @include('footer')</footer>
 </html>

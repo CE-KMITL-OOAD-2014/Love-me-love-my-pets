@@ -178,7 +178,8 @@
 			</div>
 		</div>
 
-
+ 
 
 	</body>
+      <footer> @include('footer')</footer>
 </html>

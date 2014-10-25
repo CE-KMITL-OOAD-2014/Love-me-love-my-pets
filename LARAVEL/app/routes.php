@@ -10,14 +10,17 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-
 //before @ = controller's name
 //after @ = function's name
 // because in routing shouldn't have any code
 // '/first' and 'first' are the same meaning+
+
 Route::get('/',function (){
 	return View::make('home');
 });
+
+
+
 
 Route::get('/postFindAHome',array(
 	'before' => 'checkAuth',
@@ -90,4 +93,6 @@ Route::get('/books/{genre}', function($genre){
 
 //get = request data
 //post = sent the data to process in the server*/
+
+
 ?>

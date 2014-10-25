@@ -37,7 +37,7 @@
 				
 					<div class="slogan  col-md-offset-1">
 						<h1>WELCOME TO <span class="text_color">Love me Love my pets</span> </h1>
-						<h4>WE ARE GROUP OF GENTLEMEN MAKING AWESOME WEB WITH BOOTSTRAP</h4>
+						<h4>The social of pet's lover for share the love to the pets all around the world</h4>
 					</div>
 					<div class="page-scroll">
 						<a href="#service" class="btn btn-circle">
@@ -103,28 +103,28 @@
 				  <div class="col-md-4 text-center">
 				      <img class="img-circle" src="pic1.jpg">
 				      <h3>Find A Home Post</h3>
-				      <p>Tablets, phones, laptops. The new 3 promises to be mobile friendly from the start.</p>
+				      <p>The lovely pets are waiting for the warm home</p>
 				      <p><a class="btn btn-default" href="/findAHomePost">View details »</a></p>
 				  </div>
 
 				  <div class="col-md-4 text-center">
 				      <img class="img-circle" src="pic2.jpg">
 				      <h3>Help Me Post</h3>
-				      <p>There is now just one percentage-based grid for Bootstrap 3. Customize for fixed widths.</p>
+				      <p>Let's help them for the better life</p>
 				      <p><a class="btn btn-default" href="/helpMePost">View details »</a></p>
 				  </div>
 
 				  <div class="col-md-4 text-center">
 				      <img class="img-circle" src="pic3.jpg">
 				      <h3>Lost Pet Post</h3>
-				      <p>Improved support for mixins make the new Bootstrap 3 easier to customize.</p>
+				      <p>If your pet is lost. Let's post on this topic.</p>
 				      <p><a class="btn btn-default" href="/lostPetPost">View details »</a></p>
 				  </div>
 			</div><!-- /.row -->
 
 				  <br>
-				  <hr>
-
+				 
+				  <footer> @include('footer')</footer>
 		</div>
 	
 		
