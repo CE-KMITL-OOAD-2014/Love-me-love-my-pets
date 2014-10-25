@@ -92,13 +92,13 @@
                             ?>
                             <p class="subject">{{$findAHomePost->subject}}</p>
                             <div class="avatar">
-                            <img src= {{"storage/pic/picPost/".$findAHomePost->petImage}} class="img-responsive" >
+                            <img class="img-responsive" src= {{"storage/pic/picPost/".$findAHomePost->petImage}} >
                             </div>
                             <p class="Name">ชื่อสัตว์: {{$findAHomePost->petName}} </p>
                             <p class="habit">นิสัย : {{$findAHomePost->habit}} </p>
                             <p class="location">สถานที่ : {{$findAHomePost->location}} </p>
-                           <div  ><h5>{{$findAHomePost->userName}}</h5></div>
-                            <a  class="btn btn-primary btn-sm " 
+                           <div  >      <a href = {{'/member/'.$findAHomePost->idUser}}><h5><img class="media-object img-circle" style = "width:60; height:60px;" src = <?php $mem = \Member::find($findAHomePost->idUser); echo '"/storage/pic/picMember/'.$mem->profilePic.'"' ; ?> >{{$findAHomePost->userName}}</h5></div>
+                            </a><a  class="btn btn-primary btn-sm " 
                                 href="http://www.facebook.com/sharer.php?u= www.google.com">
                                    <font size="4"> <i class="fa fa-facebook-square fa-6"></i></font>  Share FB
                             </a>

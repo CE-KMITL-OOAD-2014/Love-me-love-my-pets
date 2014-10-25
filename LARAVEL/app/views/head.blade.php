@@ -28,5 +28,6 @@ else echo '  <div class="dropdown pull-right"><br>
   			<a href="/login" class="btn btn-danger" type="button">Log in</a>
   		
 
-		 <hr>';
+		 <hr></div>'
+		 ;
 	?>

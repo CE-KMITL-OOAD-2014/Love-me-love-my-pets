@@ -91,10 +91,10 @@
                             <img src= {{"storage/pic/picPost/".$helpMePost->petImage}} class="img-responsive" >
                             </div>
                             <p class="Name">ชื่อสัตว์: {{$helpMePost->petName}} </p>
-                            <p class="habit">นิสัย : {{$helpMePost->needWhatForHelp}} </p>
+                            <p class="habit">ความต้องการ : {{$helpMePost->needWhatForHelp}} </p>
                             <p class="location">สถานที่ : {{$helpMePost->location}} </p>
-                           <div  ><h5>{{$helpMePost->userName}}</h5></div>
-                                   <a  class="btn btn-primary btn-sm " 
+                           <div  >      <a href = {{'/member/'.$helpMePost->idUser}}><h5><img class="media-object img-circle" style = "width:60; height:60px;" src = <?php $mem = \Member::find($helpMePost->idUser); echo '"/storage/pic/picMember/'.$mem->profilePic.'"' ; ?> >{{$helpMePost->userName}}</h5></div>
+                                  </a> <a  class="btn btn-primary btn-sm " 
                                 href="http://www.facebook.com/sharer.php?u= www.google.com">
                                       <font size="4"> <i class="fa fa-facebook-square fa-6"></i></font>
                                  Share FB

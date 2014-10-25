@@ -1,9 +1,9 @@
 <?php
 	class PostController extends BaseController {
-			public function createFindAHomePost(){
+			public function createPost(){
 				$member = core\CoreMember::getObjectFromEloquent(Auth::user());
 				$extType = Input::file('petImage')->guessExtension();
-				
+				$memPost = Auth::user();
 				if(Input::get('postType')=='findAHomePost'){
 					$newPost = new core\CoreFindAHomePost();
 					$newPost->setPetType(Input::get('petType'));
@@ -22,6 +22,7 @@
 					$newPost->setTimeLost(Input::get('timeLost'));
 					$newPost->setDateLost(Input::get('dateLost'));
 				}
+				$newPost->setIdUser($memPost->id);
 				$newPost->setUserName($member->getUserName());
 				$newPost->setSubject(Input::get('subject'));
 				$newPost->setContent(Input::get('content'));
@@ -35,7 +36,7 @@
 				$namePic =  $newPost->getPostType().$rightId.".".$extType;
 				$newPost->setPetImage($namePic);
 				Input::file('petImage')->move("storage/pic/picPost/",$namePic);
-				$newPost = $member->createFindAHomePost($newPost);
+				$newPost = $member->createPost($newPost);
 
 				if($newPost->postType=='findAHomePost'){
 					return Redirect::to('/findAHomePost/'.$newPost->id);

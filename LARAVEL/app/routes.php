@@ -51,9 +51,9 @@ Route::post('/edited','MemberController@editedProfile');
 Route::get('/member/{id}','MemberController@showDetailMember');
 Route::post('/logined','MemberController@logIn');
 Route::get('/logout','MemberController@logout');
-Route::post('/postedFindAHome','PostController@createFindAHomePost');
-Route::post('/postedHelpMe','PostController@createFindAHomePost');
-Route::post('/postedLostPet','PostController@createFindAHomePost');
+Route::post('/postedFindAHome','PostController@createPost');
+Route::post('/postedHelpMe','PostController@createPost');
+Route::post('/postedLostPet','PostController@createPost');
 Route::post('/registered','MemberController@register');
 Route::get('/register',function (){
 	return View::make('registerForm');

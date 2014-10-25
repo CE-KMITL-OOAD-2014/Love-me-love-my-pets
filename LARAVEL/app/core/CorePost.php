@@ -3,6 +3,7 @@ namespace core;
 
 Class CorePost {
     private $idPost;
+    private $idUser;
 	private $userName;
 	private $subject;
 	private $content;
@@ -15,8 +16,12 @@ Class CorePost {
 	private $postType;
 	private $created_at;
 
-	public function findAllComment(){
+	public function setIdUser($idUserIn){
+		 $this->idUser = $idUserIn;
+	}
 
+	public function getIdUser(){
+		return $this->idUser;
 	}
 	public function getIdPost(){
 		return $this->idPost;

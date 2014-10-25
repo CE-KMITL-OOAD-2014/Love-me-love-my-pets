@@ -34,7 +34,7 @@ class CoreMember {
 		$mem->profilePic = $model->profilePic ;
 		return $mem;
 	}
-	public function createFindAHomePost($newPost){
+	public function createPost($newPost){
 		$repo = new \repository\MemberRepository();
 		
 		return $repo->createAndSavePost($newPost);

@@ -53,7 +53,7 @@
 
           <?php 
 
-          if(Auth::user()->id==$thisMember->id) echo '
+          if(Auth::check())if(Auth::user()->id==$thisMember->id) echo '
 			<div class="col-xs-offset-10"> 
 			<a class="btn btn-danger" href="/editProfile" type="button" >edit</a> </div>';
 
@@ -62,7 +62,7 @@
 
 				<div class="row" method="show">
 					<div class="col-xs-8 col-md-4"><strong>Profile Picture</strong></div> 	
-						<p class= "col-xs-11 col-md-6" name = "profilePic" > <img style = "width:300px; height:300px;" src = {{"/storage/pic/picMember/".$thisMember->profilePic}} > </p><br><br>
+						<p class= "col-xs-11 col-md-6" name = "profilePic" > <img class="img-responsive" src = {{"/storage/pic/picMember/".$thisMember->profilePic}} > </p><br><br>
 				</div>
 
 				<div class="row" method="show">
@@ -88,7 +88,7 @@
 					<p class="col-xs-11 col-md-6" name = "petName">{{$thisMember->petName}} </p><br><br>
 
 					<div class="col-xs-8 col-md-4" ><strong>PetImage</div></strong>	
-					<p class="col-xs-11 col-md-6" name = "petImage"> <img style = "width:300px; height:300px;" src = {{"/storage/pic/picPet/".$thisMember->petImage}}  ></p><br><br>
+					<p class="col-xs-11 col-md-6" name = "petImage"> <img class="img-responsive" src = {{"/storage/pic/picPet/".$thisMember->petImage}}  ></p><br><br>
 
 			</div>
 

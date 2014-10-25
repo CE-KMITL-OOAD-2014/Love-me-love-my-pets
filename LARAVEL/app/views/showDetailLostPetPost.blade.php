@@ -51,10 +51,10 @@
 
 						<div class="row" method="show" >
 							<h2><div class="col-xs-8" name = "subject" >{{$thisPost->subject}}</h2></div><br>
-							<p>Posted on <span class="created_at">{{$thisPost->created_at}}</span> by <a href="#" class="useName">{{$thisPost->userName}}</a> 
+							<p>Posted on <span class="created_at">{{$thisPost->created_at}}</span> by <a href={{"/member/".$thisPost->idUser}} >{{$thisPost->userName}} <img img style = "width:80; height:80px;" src = <?php $mem = \Member::find($thisPost->idUser); echo '"/storage/pic/picMember/'.$mem->profilePic.'"' ; ?>  ></a>
 
 							<div class="row" method="show">
-							<p class="col-xs-12" name = "petImage"> <img style = "width:800; height:600px;" src = {{"/storage/pic/picPost/".$thisPost->petImage}} ></p>
+							<p class="col-xs-12" name = "petImage"> <img class="img-responsive" src = {{"/storage/pic/picPost/".$thisPost->petImage}} ></p>
 						</div><br>
 
 						<div class="row" method="show">
@@ -102,12 +102,12 @@
 
 
 								'<div class="col-xs-5 col-md-4" ><strong>สมาชิกที่ให้ความช่วยเหลือ</div></strong>	
-							<div class="col-xs-7" name = "ีhelper">'.$thisPost->helper.' </div><br><br>';
+							<div class="col-xs-7" name = "ีhelper">'.$thisPost->helper.' <br><br>';
 							}
 							
 							?> </div>
-
-							<br><br></div>
+</div></div>
+							<br><br>
 
 						</div>
 						
@@ -126,8 +126,8 @@
 									<li class="comment">
 								<p name = "content"> {{$comment->content }}</p>
 								<p name = "feeling"> feeling: {{$comment->feeling}} </p>
-								<img style = "width:100; height:100px;" src = <?php $mem = \Member::find($comment->idUser); echo '"/storage/pic/picMember/'.$mem->profilePic.'"' ; ?> ></p>
-								<a href = {{ "/member/".$comment->idUser}}>
+								<a href = {{ "/member/".$comment->idUser}}><img style = "width:100; height:100px;" src = <?php $mem = \Member::find($comment->idUser); echo '"/storage/pic/picMember/'.$mem->profilePic.'"' ; ?> ></p>
+								
 								<h6 name = "userName" >
 								<?php $mem = \Member::find($comment->idUser); echo $mem->userName; ?></a>
 								<span name ="created_at"> {{$comment->created_at}}</span></h6>

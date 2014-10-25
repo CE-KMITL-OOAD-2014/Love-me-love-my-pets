@@ -40,6 +40,7 @@ class MemberRepository Implements IMemberRepo{
 				$modelPost->dateLost = $newPost->getDateLost();
 				
 			}
+			$modelPost->IdUser = $newPost->getIdUser();
 			$modelPost->userName = $newPost->getUserName();
 			$modelPost->subject = $newPost->getSubject();
 			$modelPost->content = $newPost->getContent();
