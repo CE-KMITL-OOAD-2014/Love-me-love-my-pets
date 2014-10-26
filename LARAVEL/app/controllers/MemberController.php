@@ -9,8 +9,25 @@ class MemberController extends BaseController {
 	//	MemberController::checkValidate();\
 
 		$newMember = new core\CoreMember();
-		$extType = Input::file('petImage')->guessExtension();
-		$extType2 = Input::file('profilePic')->guessExtension();
+		if(Input::hasfile('petImage')){
+			$extType = Input::file('petImage')->guessExtension();
+			Input::file('petImage')->move("storage/pic/picPet",Input::get('userName').".".$extType);
+			$newMember->setPetImage(Input::get('userName').".".$extType);
+		}
+		else {
+			$newMember->setPetImage('anonymous.jpg');
+		}
+
+		if(Input::hasfile('profilePic')){
+			$extType2 = Input::file('profilePic')->guessExtension();
+			Input::file('profilePic')->move("storage/pic/picMember",Input::get('userName').".".$extType2);
+			$newMember->setProfilePic(Input::get('userName').".".$extType2);
+		}
+		else {
+			$newMember->setProfilePic('anonymous.jpg');
+		}
+
+	
 		//$newMember = $this->mem->fillInput($newMember);
 		$newMember->setUserName(Input::get('userName'));
 		$newMember->setPassword (Hash::make(Input::get('password')));
@@ -19,10 +36,10 @@ class MemberController extends BaseController {
 		$newMember->setAddress(Input::get('address'));
 		$newMember->setEmail(Input::get('email'));
 		$newMember->setPetname(Input::get('petName'));
-		$newMember->setPetImage(Input::get('userName').".".$extType);
-		$newMember->setProfilePic(Input::get('userName').".".$extType2);
-		Input::file('petImage')->move("storage/pic/picPet",Input::get('userName').".".$extType);
-		Input::file('profilePic')->move("storage/pic/picMember",Input::get('userName').".".$extType2);
+		
+	
+		
+		
 	//	echo "f";
 	//	$error = $this->mem->checkSameUsernameOrEmail($newMember);
 	//	if($error== 'NULL'){

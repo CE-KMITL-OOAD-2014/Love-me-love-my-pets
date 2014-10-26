@@ -66,7 +66,7 @@
         @endforeach-->
             <div class="row">
                   <div class="form-group">
-                  <label class="col-xs-8 col-sm-2 control-label">Pets Image</label>
+                  <label class="col-xs-8 col-sm-2 control-label">Profile pic</label>
                     <div class="col-sm-offset-2 col-sm-10" >
                     <img style = "width:300px; height:300px;" src = {{"/storage/pic/picMember/".$thisMember->profilePic}} >
                     <input type='file' name = "profilePic" value={{$thisMember->profilePic}}>
