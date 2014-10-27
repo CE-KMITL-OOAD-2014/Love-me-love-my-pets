@@ -36,4 +36,9 @@
 		"preferred-install": "dist"
 	},
 	"minimum-stability": "stable"
+	,"require": {
+"phpunit/phpunit": "4.3.*"
+	}
 }
+
+
