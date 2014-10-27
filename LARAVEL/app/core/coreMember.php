@@ -40,6 +40,12 @@ class CoreMember {
 		return $repo->createAndSavePost($newPost);
 	}
 
+
+	public function createComment($memComment,$thisPost,$newComment){
+		$repo = new \repository\MemberRepository();
+		$repo->createAndSaveComment($memComment,$thisPost,$newComment);
+	}
+
 	public function helpPost($thatPost,$userNameHelper){
 		$repo = new \repository\MemberRepository();
 		$repo->helpPostSave($thatPost,$userNameHelper);

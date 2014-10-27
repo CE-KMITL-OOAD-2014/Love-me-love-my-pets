@@ -9,5 +9,6 @@ namespace repository;
 			$modelComment->content = $commentIn->getContent();
 			$modelComment->feeling = $commentIn->getFeeling();
 			$modelComment->save();
+			return $modelComment;
 		}
 	}

@@ -1,6 +1,7 @@
 <?php
 	class PostTest extends TestCase{
-		public static function mockPost($userName,$idUser,$subject,$content,$petName,$petImage,$location,$contact,$status,$postType,$helper,$petType,$specificRequire,$habit){
+		public static function mockPost($userName,$idUser,$subject,$content,$petName,$petImage,$location
+			,$contact,$status,$postType,$helper,$petType,$specificRequire,$habit){
 			$post = new core\CoreFindAHomePost();
 			$post->setIdUser($idUser);
 			$post->setUserName($userName);
@@ -21,10 +22,9 @@
 		}
 		public function testFindAHomePost(){
 	
-			$mock = PostTest::mockPost('testUserName',11,'testSubject','testContent','testPetName','testPetImage','testLocation','testContact',0,'findAHomePost'
-				,NULL,'testPetType','testSpecificRequire','testHabit');
+			$mock = PostTest::mockPost('testUserName',11,'testSubject','testContent','testPetName'
+				,'testPetImage','testLocation','testContact',0,'findAHomePost',NULL,'testPetType','testSpecificRequire','testHabit');
 			$memRepo = new  repository\MemberRepository();
-				
 			$result = $memRepo->createAndSavePost($mock);
 		
 			$this->assertEquals('testUserName',$result->userName);

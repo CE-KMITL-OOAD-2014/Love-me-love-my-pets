@@ -10,11 +10,12 @@
 			else $thisPost =\LostPetPost::find($idPost);
 
 			$memComment = Auth::user();
+			$mem = new core\CoreMember();
 			$newComment = new core\CoreComment();
 			$newComment->setContent(Input::get('content'));
 			$newComment->setFeeling(Input::get('feeling'));
-			$repo = new repository\CommentRepository();
-			$repo->createComment($memComment,$thisPost,$newComment);
+			$mem->createComment($memComment,$thisPost,$newComment);
+			
 			
 			return Redirect::to('/'.$thisPost->postType.'/'.$thisPost->id);
 		}

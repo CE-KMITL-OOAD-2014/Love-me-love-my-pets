@@ -21,6 +21,18 @@ class MemberRepository Implements IMemberRepo{
 		$oldMem->profilePic = $updateMem->getProfilePic();
 		$oldMem->save();
 	}
+
+	public function createAndSaveComment($memIn,$postIn,$commentIn){
+			$modelComment = new \Comment();
+			$modelComment->idUser = $memIn->id;
+			$modelComment->postType = $postIn->postType;
+			$modelComment->postId = $postIn->id;
+			$modelComment->content = $commentIn->getContent();
+			$modelComment->feeling = $commentIn->getFeeling();
+			$modelComment->save();
+			return $modelComment;
+		}
+
 	public function createAndSavePost($newPost){
 			if($newPost->getPostType()=="findAHomePost"){
 				$modelPost = new \FindAHomePost();
