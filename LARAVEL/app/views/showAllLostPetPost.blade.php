@@ -83,11 +83,15 @@
                     <div class="team boxed-grey">
                         <div class="inner">
                          <?php if($lostPetPost->status == 0){
-                            echo '<form action="/helpedPost" method="POST">
+                           if(Auth::check()){ echo'<form action="/helpedPost" method="POST">
                               <input type="hidden" name = "postType" value="lostPetPost">
                               <input type="hidden" name = "id" value='. $lostPetPost->id.' >
                             <div style="color:#d9534f"><font size="20"><button class="glyphicon glyphicon-remove" type="submit" value="Submit">
                             </button></font></div></form>';
+              }else {
+                echo '<div style="color:#d9534f"><font size="20"><span class="glyphicon glyphicon-remove"></span></font></div>';
+              }
+                            
                         }
                               else {
                                 echo '<div style="color:#01DF01"><font size="20"><span class="glyphicon glyphicon-ok">
