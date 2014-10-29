@@ -15,10 +15,20 @@
 // because in routing shouldn't have any code
 // '/first' and 'first' are the same meaning+
 
+Route::get('/mail',function(){
+
+
+Mail::send('emails.regisOk',array('firstname'=>'555'), function($message)
+{
+  $message->to('benz6124@gmail.com', 'Love me, love my pets')
+          ->subject('Welcome to Love me, love my pets!');
+});
+
+
+});
 Route::get('/',function (){
 	return View::make('home');
 });
-
 
 
 
