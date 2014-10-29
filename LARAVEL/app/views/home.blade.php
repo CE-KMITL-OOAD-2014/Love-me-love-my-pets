@@ -13,18 +13,18 @@
 
 
 
-	</head>
-	<body>
+	
+	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
 	<script src = "js/bootstrap.js"></script>
 	<!-- -->
-	
-
-
-
-		<div class="container">
-
 	</head>
+
+
+
+		
+
+	
 	<body>
 
 	@include('head')

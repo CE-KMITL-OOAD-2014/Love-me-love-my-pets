@@ -16,10 +16,11 @@ class CoreMember {
 	public function __construct (repository\MemberRepository $postIn){
 		$this->post = $postIn;
 	}*/
-	public function updatePost($newPost){
-		$memRepo = new MemberRepository();
-		$memRepo->updataPostt($newPost);
+	public function resetPass($idMember){
+			$repo = new \repository\MemberRepository();
+			return $repo->resetPass($idMember);
 	}
+
 	public static function getObjectFromEloquent($model){
 		$mem = new CoreMember();
 		$mem->id = $model->id ;

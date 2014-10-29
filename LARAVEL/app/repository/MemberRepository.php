@@ -3,12 +3,13 @@ namespace repository;
 
 class MemberRepository Implements IMemberRepo{
 
-	public function updataPostt($newPost){
-		$model = User::find($newPost->getIdPost());
-		$model->petImage = $newPost->getPetImage();
-		$model->save();
+	public function resetPass($idMember){
+		$thisMember = \Member::find($idMember);
+		$newPassword = str_random(7);
+		$thisMember->password= \Hash::make($newPassword);
+		$thisMember->save();
+		return $newPassword;
 	}
-
 	public function saveProfileEdit($updateMem){
 		$oldMem = \Member::find(\Auth::user()->id);
 		$oldMem->userName = $updateMem->getUserName();

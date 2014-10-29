@@ -5,6 +5,25 @@ class MemberController extends BaseController {
 	public function __construct (repository\MemberRepository $memIn){
 		$this->mem = $memIn;
 	}
+
+	public function resetPassword(){
+		$thisMember = \Member::where('email','=',Input::get('email'))->get();;
+		$realMember = null;
+		foreach($thisMember as $thisM) { if($thisM!=null) $realMember = $thisM;}
+
+
+	
+		$mem = new core\CoreMember();
+		$newPassword = $mem->resetPass($realMember->id);
+
+			Mail::send('emails.resetPass',array('newPassword'=>$newPassword), function($message) use ($newPassword,$realMember)
+	{
+  	$message->to($realMember->email, 'Love me, love my pets')
+          ->subject('ResetPassword');
+	});
+
+			return Redirect::to('/successResetPassword');
+	}
 	public function register(){
 	//	MemberController::checkValidate();\
 

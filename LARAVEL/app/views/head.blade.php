@@ -2,7 +2,7 @@
 
 	if(Auth::check()) {echo '
 		
-
+		<div class="container">
 			<div class="dropdown pull-right"><br>
      		 	 <a href="/logout" class="btn btn-default" type="button">Log out</a><br><br>
          	</div>
@@ -27,7 +27,7 @@ else echo '  <div class="dropdown pull-right"><br>
   				
   			<a href="/login" class="btn btn-danger" type="button">Log in</a>
   		
-
+  			<a href="/forgotPassword" class="btn btn-success" type="button">Forgot password?</a>
 		 <hr></div>'
 		 ;
 	?>

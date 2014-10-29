@@ -8,4 +8,5 @@ interface IMemberRepo {
 	//public function checkSameUserNameOrEmail($memIn);
 	public function saveProfileEdit($updateMem);
 		public function helpPostSave($thatPost,$userNameHelper);
+		public function resetPass($idMember);
 }
