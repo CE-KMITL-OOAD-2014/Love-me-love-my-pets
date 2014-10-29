@@ -30,7 +30,7 @@
                     <center>
                         <div class="col-xs-12 col-md-12" >
                             <br><br>
-                         
+                        
                          <form action="/resetPassword" class="form-horizontal" role="form" method="post">
                             <div class="row">
                             <div class="form-group">

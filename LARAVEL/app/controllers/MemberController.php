@@ -10,8 +10,14 @@ class MemberController extends BaseController {
 		$thisMember = \Member::where('email','=',Input::get('email'))->get();;
 		$realMember = null;
 		foreach($thisMember as $thisM) { if($thisM!=null) $realMember = $thisM;}
+		/*if($realMember == null) echo 'f';
+		else echo $realMember->id;*/
+		if($realMember==null){
 
-
+			$error = 'invalid email! please try again';
+			return Redirect::to('/forgotPassword');
+		}
+		else{
 	
 		$mem = new core\CoreMember();
 		$newPassword = $mem->resetPass($realMember->id);
@@ -23,6 +29,7 @@ class MemberController extends BaseController {
 	});
 
 			return Redirect::to('/successResetPassword');
+		}
 	}
 	public function register(){
 	//	MemberController::checkValidate();\
