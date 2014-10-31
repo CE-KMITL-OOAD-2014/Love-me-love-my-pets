@@ -36,7 +36,7 @@
                             <div class="form-group">
                             <label class="col-xs-8 col-md-2 control-label">Registered Email</label>
                                 <div class="col-xs-8 col-md-5">
-                                    <input type="string" name="email" class="form-control" placeholder="กรอกอีเมล์ที่เคยสมัครสมาชิกไว้">
+                                    <input type="string" name="email" class="form-control" placeholder="กรอกอีเมล์ที่เคยสมัครสมาชิกไว้" required autofocus>
                                 </div>
                             </div>
                         </div>
@@ -44,7 +44,7 @@
                             <div class="row">
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <input class="btn btn-success"   type="submit" value="OK" >
+                        <input class="btn btn-success"   type="submit" value="reset password" >
                     </div>
                   </div>
                 </div>

@@ -69,7 +69,7 @@
       						<div class="form-group">
        						<label class="col-xs-8 col-md-2 control-label">Usename</label>
         						<div class="col-xs-8 col-md-5">
-          							<input type="string" name="userName" class="form-control" placeholder="นามแฝง" >
+          							<input type="string" name="userName" class="form-control" placeholder="นามแฝง" required autofocus>
         						</div>
       						</div>
       					</div>
@@ -78,7 +78,7 @@
       						<div class="form-group">
        						<label class="col-xs-8 col-md-2 control-label">Password</label>
         						<div class="col-xs-8 col-md-5">
-          							<input type="password" name="password" class="form-control" placeholder="รหัสผ่าน" >
+          							<input type="password" name="password" class="form-control" placeholder="รหัสผ่าน" required autofocus>
         						</div>
         					</div>
       					</div>
@@ -96,7 +96,7 @@
       						<div class="form-group">
        						<label class="col-xs-8 col-md-2 control-label">Realname</label>
         						<div class="col-xs-8 col-md-5">
-          							<input type="string" name="realNameSurName" class="form-control" placeholder="ชื่อ-นามสกุล">
+          							<input type="string" name="realNameSurName" class="form-control" placeholder="ชื่อ-นามสกุล" required autofocus>
         						</div>
         					</div>
       					</div>
@@ -106,7 +106,7 @@
       						<div class="form-group">
        						<label class="col-xs-8 col-md-2 control-label">Age</label>
         						<div class="col-xs-8 col-md-5">
-          							<input type="int" name="age" class="form-control" placeholder="อายุ">
+          							<input type="int" name="age" class="form-control" placeholder="อายุ" required autofocus>
         						</div>
       						</div>
       					</div>
@@ -116,7 +116,7 @@
       						<div class="form-group">
        						<label class="col-xs-8 col-md-2 control-label">Address</label>
         						<div class="col-xs-8 col-md-5">
-          							<input type="string" name="address"  class="form-control" placeholder="ที่อยู่">
+          							<input type="string" name="address"  class="form-control" placeholder="ที่อยู่" required autofocus>
         						</div>
       						</div>
       					</div>
@@ -126,7 +126,7 @@
                   <label class="col-xs-8 col-md-2 control-label">E-Mail</label>
                     <div class="col-xs-8 col-md-5">
                         <input type="string" name="email"  class
-                        ="form-control" placeholder="ex: lovedog@gmail.com">
+                        ="form-control" placeholder="ex: lovedog@gmail.com" required autofocus>
                     </div>
                   </div>
                 </div>
@@ -135,7 +135,7 @@
       						<div class="form-group">
        						<label class="col-xs-8 col-md-2 control-label">PetName</label>
         						<div class="col-xs-8 col-md-5">
-                      <input type="string" name="petName"  class="form-control" placeholder="ชื่อสัตว์เลี้ยง">
+                      <input type="string" name="petName"  class="form-control" placeholder="ชื่อสัตว์เลี้ยง" required autofocus>
         						</div>
       						</div>
       					</div>
@@ -145,7 +145,7 @@
       						<div class="form-group">
        						<label class="col-xs-8 col-sm-2 control-label">Pets Image</label>
         						<div class="col-sm-offset-2 col-sm-10" >
-    								<input type='file' name = "petImage" >
+    								<input type='file' name = "petImage" required autofocus>
     							</div> <br>
       						</div>
     					</div>
@@ -154,7 +154,7 @@
                   <div class="form-group">
                   <label class="col-xs-8 col-sm-2 control-label">Profile Picture</label>
                     <div class="col-sm-offset-2 col-sm-10" >
-                    <input type='file' name = "profilePic" >
+                    <input type='file' name = "profilePic" required autofocus>
                   </div> <br>
                   </div>
               </div>

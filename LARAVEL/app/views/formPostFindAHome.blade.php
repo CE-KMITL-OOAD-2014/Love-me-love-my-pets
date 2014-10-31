@@ -17,8 +17,8 @@
             <div class="row">
                 <div class="dropdown pull-right"><br>
                   <a href= "/" class="btn btn-danger" type="button">Home</a>
-                   <a href="findAHomePost" class="btn btn-primary" type="button">Main Find A Home Post</a>
-                    <a href="logout" class="btn btn-default" type="button">Log out</a>
+                   <a href="/findAHomePost" class="btn btn-primary" type="button">Main Find A Home Post</a>
+                    <a href="/logout" class="btn btn-default" type="button">Log out</a>
               
                 </div>
              </div>
@@ -60,7 +60,7 @@
   						<div class="form-group">
    						<label class="col-md-2 control-label">ชื่อหัวข้อ</label>
     						<div class="col-xs-6 col-md-4">
-      							<input type="string" name="subject" class="form-control">
+      							<input type="string" name="subject" class="form-control" required autofocus>
     						</div>
     					</div>
   					</div>
@@ -69,7 +69,7 @@
   						<div class="form-group">
    						<label class="col-md-2 control-label">รายละเอียด</label>
     						<div class="col-xs-6 col-md-4">
-                    <textarea type="text"  name="content" rows="5" class="form-control"></textarea>
+                    <textarea type="text"  name="content" rows="5" class="form-control" required autofocus></textarea>
     						</div>
     					</div>
   					</div>
@@ -79,7 +79,7 @@
   						<div class="form-group">
    						<label class="col-md-2 control-label">ชื่อของสัตว์</label>
     						<div class="col-xs-6 col-md-4">
-      							<input type="string" name="petName" class="form-control">
+      							<input type="string" name="petName" class="form-control" required autofocus>
     						</div>
   						</div>
   					</div>
@@ -88,7 +88,7 @@
               <div class="form-group">
               <label class="col-sm-2 control-label">รูปของสัตว์</label>
                 <div class="col-sm-offset-2 col-sm-10" >
-                <input type="file" name = "petImage" >
+                <input type="file" name = "petImage" required autofocus>
                 </div> <br>
               </div>
           </div>
@@ -119,7 +119,7 @@
   						<div class="form-group">
    						<label class="col-md-2 control-label">สถานที่</label>
     						<div class="col-xs-6 col-md-4">
-      							<input type="string" name="location"  class="form-control">
+      							<input type="string" name="location"  class="form-control" required autofocus>
     						</div>
   						</div>
   					</div>
@@ -129,7 +129,7 @@
               <div class="form-group">
               <label class="col-md-2 control-label">ลักษณะนิสัยของสัตว์</label>
                 <div class="col-xs-6 col-md-4">
-                    <input type="string" name= "habit"  class="form-control">
+                    <input type="string" name= "habit"  class="form-control" required autofocus>
                 </div>
               </div>
             </div>
@@ -138,7 +138,7 @@
               <div class="form-group">
               <label class="col-md-2 control-label">ความต้องการพิเศษ</label>
                 <div class="col-xs-6 col-md-4">
-                    <input type="text" name= "specificRequire"  class="form-control">
+                    <input type="text" name= "specificRequire"  class="form-control" required autofocus>
                 </div>
               </div>
             </div>
@@ -148,7 +148,7 @@
               <div class="form-group">
               <label class="col-md-2 control-label">สะดวกให้ติดต่อกลับโดย</label>
                 <div class="col-xs-6 col-md-4">
-                    <input type="string" name= "contact"  class="form-control">
+                    <input type="string" name= "contact"  class="form-control" required autofocus>
                 </div>
               </div>
             </div>
@@ -157,7 +157,7 @@
               <div class="form-group">
               <label class="col-md-2 control-label">ประเภทของการโพสต์</label>
                 <div class="col-xs-6 col-md-4">
-                    <input type="string" name= "postType"   value="findAHomePost" class="form-control">
+                    <input type="string" name= "postType"   value="findAHomePost" class="form-control" required autofocus>
                 </div>
               </div>
             </div>

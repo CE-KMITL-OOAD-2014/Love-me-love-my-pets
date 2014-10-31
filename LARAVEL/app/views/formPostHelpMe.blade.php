@@ -18,8 +18,8 @@
             <div class="row">
                 <div class="dropdown pull-right"><br>
                   <a href="/" class="btn btn-danger" type="button">Home</a>
-                   <a href="helpMePost" class="btn btn-success" type="button">Main HelpMe Post</a>
-                    <a href="logout" class="btn btn-default" type="button">Log out</a>
+                   <a href="/helpMePost" class="btn btn-success" type="button">Main HelpMe Post</a>
+                    <a href="/logout" class="btn btn-default" type="button">Log out</a>
               
                 </div>
              </div>
@@ -61,7 +61,7 @@
               <div class="form-group">
               <label class="col-xs-8 col-md-3 control-label">ชื่อหัวข้อ</label>
                 <div class="col-xs-11 col-md-6">
-                    <input type="string" name="subject" class="form-control">
+                    <input type="string" name="subject" class="form-control" required autofocus>
                 </div>
               </div>
             </div>
@@ -70,7 +70,7 @@
               <div class="form-group">
               <label class="col-xs-8 col-md-3 control-label">รายละเอียด</label>
                 <div class="col-xs-11 col-md-6">
-                    <textarea type="text"  name="content" rows="5" class="form-control"></textarea>
+                    <textarea type="text"  name="content" rows="5" class="form-control" required autofocus></textarea>
                 </div>
               </div>
             </div>
@@ -80,7 +80,7 @@
               <div class="form-group">
               <label class="col-xs-8 col-md-3 control-label">ชื่อของสัตว์</label>
                 <div class="col-xs-11 col-md-6">
-                    <input type="string" name="petName" class="form-control">
+                    <input type="string" name="petName" class="form-control" required autofocus>
                 </div>
               </div>
             </div>
@@ -121,7 +121,7 @@
               <div class="form-group">
               <label class="col-xs-8 col-md-3 control-label">ความช่วยเหลือที่ต้องการ</label>
                 <div class="col-xs-11 col-md-6">
-                    <input type="text" name="needWhatForHelp"  class="form-control">
+                    <input type="text" name="needWhatForHelp"  class="form-control" required autofocus>
                 </div>
               </div>
             </div>
@@ -131,7 +131,7 @@
               <div class="form-group">
               <label class="col-xs-8 col-md-3 control-label">สถานที่</label>
                 <div class="col-xs-11 col-md-6">
-                    <input type="string" name="location"  class="form-control">
+                    <input type="string" name="location"  class="form-control" required autofocus>
                 </div>
               </div>
             </div>
@@ -144,7 +144,7 @@
               <div class="form-group">
               <label class="col-xs-8 col-md-3 control-label">สะดวกให้ติดต่อกลับทาง</label>
                 <div class="col-xs-11 col-md-6">
-                    <input type="string" name="contact"  class="form-control">
+                    <input type="string" name="contact"  class="form-control" required autofocus>
                 </div>
               </div>
             </div>
