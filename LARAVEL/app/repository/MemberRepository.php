@@ -10,6 +10,12 @@ class MemberRepository Implements IMemberRepo{
 		$thisMember->save();
 		return $newPassword;
 	}
+
+	public function updatePicture($thisPost,$newPost){
+		$thisPost->petImage = $newPost->getPetImage();
+		$thisPost->save();
+	}
+
 	public function saveProfileEdit($updateMem){
 		$oldMem = \Member::find(\Auth::user()->id);
 		$oldMem->userName = $updateMem->getUserName();
@@ -58,7 +64,7 @@ class MemberRepository Implements IMemberRepo{
 			$modelPost->subject = $newPost->getSubject();
 			$modelPost->content = $newPost->getContent();
 			$modelPost->petName = $newPost->getPetName();
-			$modelPost->petImage = $newPost->getPetImage();
+			
 			$modelPost->location = $newPost->getLocation();
 			$modelPost->contact = $newPost->getContact();
 			$modelPost->status = $newPost->getStatus();

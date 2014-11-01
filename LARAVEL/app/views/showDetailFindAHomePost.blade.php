@@ -51,7 +51,11 @@
 						<div class="row" method="show" >
 							<h2><div class="col-xs-8" name = "subject" >{{$thisPost->subject}}</h2>
 						</div><br>
-							<p>Posted on <span class="created_at">{{$thisPost->created_at}}</span> by <a href={{"/member/".$thisPost->idUser}} >{{$thisPost->userName}}      <img img style = "width:40; height:40px;" src = <?php $mem = \Member::find($thisPost->idUser); echo '"/storage/pic/picMember/'.$mem->profilePic.'"' ; ?>  ></a> 
+							<p>Posted on <span class="created_at">{{$thisPost->created_at}}</span> by 
+							<a href={{"/member/".$thisPost->idUser}} >{{$thisPost->userName}}      
+							<img img style = "width:40; height:40px;" src = 
+							<?php $mem = \Member::find($thisPost->idUser); 
+							echo '"/storage/pic/picMember/'.$mem->profilePic.'"' ; ?>  ></a> 
 						
 
 						<div class="row" method="show">

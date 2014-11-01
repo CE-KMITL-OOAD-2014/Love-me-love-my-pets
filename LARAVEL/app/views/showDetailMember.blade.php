@@ -15,14 +15,18 @@
 	
 	<div class="container">
         
-         	<div class="row">
-                <div class="dropdown pull-right"><br>
-                  <a class="btn btn-danger" href="/"  type="button">Home</a>
-                
-                    <a class="btn btn-default" href="/logout"  type="button">Log out</a>
-              
-                </div>
-            </div>
+         	@include ('head');
+         	    <div class="container">
+        <div class="col-xs-12 col-md-12">
+            <!--One share for one better life.-->
+            <div class="dropdown pull-right"><br>
+              <a href="/" class="btn btn-warning" type="button">Home</a>
+              <a href="/findAHomePost" class="btn btn-info" type="button">Find A Home Post</a>
+              <a href="/helpMePost" class="btn btn-success" type="button">Help Me Post</a>
+              <a href="/lostPetPost" class="btn btn-danger" type="button">Lost Pet Post</a>      
+            </div> 
+        </div>
+    </div> 
                <br>
               <div class="row">
                 <div class="col-md-12">

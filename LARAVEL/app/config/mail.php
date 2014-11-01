@@ -93,8 +93,10 @@ return array(
 	|
 	*/
 
-	'password' => 'benzbenz',
-
+	'password' => 'benzbenz', 
+	//
+	// ukslgqvbonwyfmsi
+	//gnmeeqkhextiawhp
 	/*
 	|--------------------------------------------------------------------------
 	| Sendmail System Path

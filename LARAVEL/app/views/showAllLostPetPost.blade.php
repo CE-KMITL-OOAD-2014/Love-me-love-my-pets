@@ -23,7 +23,10 @@
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
 
-@include('head')
+    <div class="col-xs-12 col-md-12">
+        @include('head')
+    </div>
+
     <div class="container">
             <!--One share for one better life.-->
           <div class="dropdown pull-right"><br>
@@ -72,13 +75,22 @@
 			</div>
 			</div>
 		</div>
+
 		<div class="container">
-	
-            <div class="row" method = "show">
 
 
-               @foreach($lostPetPosts as $lostPetPost)
-              <div class="col-xs-6 col-sm-3 col-md-3">
+           <?php
+           $t=1;
+           ?>
+
+	         @foreach($lostPetPosts as $lostPetPost)
+
+
+           @if($t%4==1)
+           <div class="row" method = "show">
+           @endif
+
+              <div class="col-xs-12 col-sm-3 col-md-3">
                 <div class="wow bounceInUp" data-wow-delay="0.2s">
                     <div class="team boxed-grey">
                         <div class="inner">
@@ -106,9 +118,12 @@
                             <p class="Name">ชื่อสัตว์: {{$lostPetPost->petName}} </p>
                             <p class="habit">ลักษณะเด่นชัด : {{$lostPetPost->uniqueApperance}} </p>
                             <p class="location">สถานที่ที่หาย : {{$lostPetPost->location}} </p>
-                           <div  >
-                           <a href = {{'/member/'.$lostPetPost->idUser}}><h5><img class="media-object img-circle" style = "width:60; height:60px;" src = <?php $mem = \Member::find($lostPetPost->idUser); echo '"/storage/pic/picMember/'.$mem->profilePic.'"' ; ?> >{{$lostPetPost->userName}}</h5></div>
-                                 </a> <a  class="btn btn-primary btn-sm " target="_blank"
+                          
+                           <a href = {{'/member/'.$lostPetPost->idUser}}><h5><center>
+                                <img class="media-object img-circle" style = "width:60; height:60px;" src = <?php $mem = \Member::find($lostPetPost->idUser); echo '"/storage/pic/picMember/'.$mem->profilePic.'"' ; ?> >{{$lostPetPost->userName}}</h5>
+                         
+                            </center></a> 
+                            <a  class="btn btn-primary btn-sm " target="_blank"
                                 href={{'"http://www.facebook.com/sharer.php?u= 23.101.30.133/lostPetPost/'.$lostPetPost->id.'"'}}>
                                      <font size="4"> <i class="fa fa-facebook-square fa-5"></i></font>
                                  Share
@@ -119,14 +134,19 @@
                     </div>
                 </div>
 
-                 @endforeach
-            </div>
-               
-    			
-            <br><br>
 
+        @if($t%4 == 0)
+        </div>
+        <br><br>
+        @endif
+               <?php
+               $t++;
+               ?>  
+
+         
+            @endforeach
         
-    </div>
+   
 	</div>
 
 	</section>

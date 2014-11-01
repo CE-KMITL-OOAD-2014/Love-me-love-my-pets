@@ -31,21 +31,24 @@
 				$newPost->setContact(Input::get('contact'));
 				$newPost->setStatus(0);
 				$newPost->setPostType(Input::get('postType'));
-				$rightId = PostController::getRightId(Input::get('postType'));
-				$newPost->setIdPost($rightId);
-				$namePic =  $newPost->getPostType().$rightId.".".$extType;
+				//$rightId = PostController::getRightId(Input::get('postType'));
+				//
+				
+				$modelPost = $member->createPost($newPost);
+				$newPost->setIdPost($modelPost->id);
+				$namePic =  $newPost->getPostType().$modelPost->id.".".$extType;
 				$newPost->setPetImage($namePic);
 				Input::file('petImage')->move("storage/pic/picPost/",$namePic);
-				$newPost = $member->createPost($newPost);
+				$member->updatePic($newPost);
 
-				if($newPost->postType=='findAHomePost'){
-					return Redirect::to('/findAHomePost/'.$newPost->id);
+				if($modelPost->postType=='findAHomePost'){
+					return Redirect::to('/findAHomePost/'.$modelPost->id);
 				}
-				else if($newPost->postType=='helpMePost'){
-					return Redirect::to('/helpMePost/'.$newPost->id);
+				else if($modelPost->postType=='helpMePost'){
+					return Redirect::to('/helpMePost/'.$modelPost->id);
 				}
 				else{
-					return Redirect::to('/lostPetPost/'.$newPost->id);
+					return Redirect::to('/lostPetPost/'.$modelPost->id);
 				}
 			//	echo $extType;
 				
@@ -55,30 +58,7 @@
 				}
 
 
-	 	public static function getRightId($postTypeIn){
-		 //	$maxId = 0;
-			if($postTypeIn == 'lostPetPost'){
-				for($i=1;$i<=10000000;$i++){
-					$maxId = $i;
-				if(\LostPetPost::find($i)==NULL)break;
-			}
-			}
-			else if ($postTypeIn == 'findAHomePost') {
-				for($i=1;$i<=10000000;$i++){
-					$maxId = $i;
-				if(\FindAHomePost::find($i)==NULL)break;
-			}
-			}
-			else {
-				for($i=1;$i<=10000000;$i++){
-					$maxId = $i;
-				if(\HelpMePost::find($i)==NULL)break;
-			}
-			}
-
-		
-			return $maxId;
-	}	
+	 
 
 
 	public function showFindAHomePost(){

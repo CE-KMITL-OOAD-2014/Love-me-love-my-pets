@@ -23,7 +23,10 @@
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-custom" >
 
-@include('head')
+    <div class="col-xs-12 col-md-12">
+        @include('head')
+    </div>
+
     <div class="container">
         <div class="dropdown pull-right"><br>
             <a href="/" class="btn btn-warning" type="button">Home</a>
@@ -73,13 +76,13 @@
         
           
              @foreach($helpMePosts as $helpMePost)
- 
+       
          @if($t%4==1)
 
          <div class="row" method = "show">
          @endif
             
-                <div class="col-xs-6 col-sm-3 col-md-3" style="float: left;">
+                <div class="col-xs-12 col-sm-3 col-md-3" style="float: left;">
                   <div class="wow bounceInUp" data-wow-delay="0.2s">
                     <div class="team boxed-grey">
                     <div class="inner">
@@ -111,8 +114,8 @@
                           <p class="Name">ชื่อสัตว์: {{$helpMePost->petName}} </p>
                           <p class="habit">ความต้องการ : {{$helpMePost->needWhatForHelp}} </p>
                            <p class="location">สถานที่ : {{$helpMePost->location}} </p>
-                          <div><a href = {{'/member/'.$helpMePost->idUser}}><h5><img class="media-object img-circle" style = "width:60; height:60px;" src = <?php $mem = \Member::find($helpMePost->idUser); echo '"/storage/pic/picMember/'.$mem->profilePic.'"' ; ?> >{{$helpMePost->userName}}</h5>
-                          </div></a> 
+                          <div><a href = {{'/member/'.$helpMePost->idUser}}><h5><center><img class="media-object img-circle" style = "width:60; height:60px;" src = <?php $mem = \Member::find($helpMePost->idUser); echo '"/storage/pic/picMember/'.$mem->profilePic.'"' ; ?> >{{$helpMePost->userName}}</h5>
+                          </center></div></a> 
                           <a  class="btn btn-primary btn-sm " target="_blank"
                                 href={{'"http://www.facebook.com/sharer.php?u= 23.101.30.133/helpMePost/'.$helpMePost->id.'"'}}>
                                       <font size="4"> <i class="fa fa-facebook-square fa-6"></i></font>
@@ -135,9 +138,9 @@
                $t++;
                ?>  
                      
-                   
+                 
                   
-              
+         
                @endforeach 
 
         

@@ -16,6 +16,18 @@ class CoreMember {
 	public function __construct (repository\MemberRepository $postIn){
 		$this->post = $postIn;
 	}*/
+
+	public function updatePic($newPost){
+		if($newPost->getPostType()=='findAHomePost')
+			$thisPost = \FindAHomePost::find($newPost->getIdPost());
+		else if($newPost->getPostType()=='lostPetPost')
+			$thisPost = \LostPetPost::find($newPost->getIdPost());
+		else $thisPost = \HelpMePost::find($newPost->getIdPost());
+
+		$repo = new \repository\MemberRepository();
+		$repo->updatePicture($thisPost,$newPost);
+	}
+
 	public function resetPass($idMember){
 			$repo = new \repository\MemberRepository();
 			return $repo->resetPass($idMember);
