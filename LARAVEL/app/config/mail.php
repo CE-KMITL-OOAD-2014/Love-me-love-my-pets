@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => 'benz6124@gmail.com', 'name' => 'adminLoveMeLoveMypet'),
+	'from' => array('address' => 'lovemelovemypets2014@gmail.com', 'name' => 'adminLoveMeLoveMypet'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -80,7 +80,7 @@ return array(
 	|
 	*/
 
-	'username' => 'benz6124@gmail.com',
+	'username' => 'lovemelovemypets2014@gmail.com',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -93,7 +93,7 @@ return array(
 	|
 	*/
 
-	'password' => '0820520842',
+	'password' => 'benzbenz',
 
 	/*
 	|--------------------------------------------------------------------------

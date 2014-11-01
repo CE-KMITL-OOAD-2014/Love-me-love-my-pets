@@ -12,11 +12,11 @@
 	     
 				<a href=  "/member/'.Auth::user()->id.'"' ; echo'
 
-				 class="btn btn-danger" type="button"  ><h4>'.Auth::user()->userName.'</h4><hr>
+				 class="btn btn-default" type="button"  ><h4>'.Auth::user()->userName.'</h4><hr>
 			     	
 			     	<img 	class="media-object img-circle"  type="button" src="/storage/pic/picMember/'.Auth::user()->profilePic.'"' ;
-			     		 echo '	style = "width:100px; height:100px;"  ><br>View Profile</a> <br>
-			     </a> <br>
+			     		 echo '	style = "width:100px; height:100px;"  ><br>View Profile</a> 
+			     </a> 
 
 	         </div>
 

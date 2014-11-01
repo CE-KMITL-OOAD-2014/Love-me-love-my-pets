@@ -33,7 +33,7 @@
                  
           </div>
     </div> 
-    <div style ="background-color:#d9fbcf">
+  <div style ="background-color:#d9fbcf">
 <!-- Section: about -->
     <section id="about" class="home-section text-center">
 		<div class="heading-about">
@@ -64,16 +64,29 @@
 			</div>
 			</div>
 		</div>
-		<div class="container">
-	
-            <div class="row" method = "show">
 
+		<div class="container">
+	       
+        <?php
+         $t=1;
+         ?>
+        
+          
              @foreach($helpMePosts as $helpMePost)
-                   <div class="col-xs-6 col-sm-3 col-md-3">
-                <div class="wow bounceInUp" data-wow-delay="0.2s">
+ 
+         @if($t%4==1)
+
+         <div class="row" method = "show">
+         @endif
+            
+                <div class="col-xs-6 col-sm-3 col-md-3" style="float: left;">
+                  <div class="wow bounceInUp" data-wow-delay="0.2s">
                     <div class="team boxed-grey">
-                        <div class="inner">
-                  <?php if($helpMePost->status == 0){
+                    <div class="inner">
+        
+              <?php 
+              
+              if($helpMePost->status == 0){
                           if(Auth::check()){ echo'<form action="/helpedPost" method="POST">
                               <input type="hidden" name = "postType" value="helpMePost">
                               <input type="hidden" name = "id" value='. $helpMePost->id.' >
@@ -88,36 +101,51 @@
                                 echo '<div style="color:#01DF01"><font size="20"><span class="glyphicon glyphicon-ok">
                                 <p class="habit">ผู้ช่วยเหลือ:'.$helpMePost->helper.'</p>   
                                 </span></font></div>'; 
-                            }
-                            ?>
-    					   <p class="subject">{{$helpMePost->subject}}</p>
-                            <div class="avatar">
+                            }                            
+
+                     ?>
+    					           <p class="subject">{{$helpMePost->subject}}</p>
+                          <div class="avatar">
                             <img src= {{"storage/pic/picPost/".$helpMePost->petImage}} class="img-responsive" >
-                            </div>
-                            <p class="Name">ชื่อสัตว์: {{$helpMePost->petName}} </p>
-                            <p class="habit">ความต้องการ : {{$helpMePost->needWhatForHelp}} </p>
-                            <p class="location">สถานที่ : {{$helpMePost->location}} </p>
-                           <div  >      <a href = {{'/member/'.$helpMePost->idUser}}><h5><img class="media-object img-circle" style = "width:60; height:60px;" src = <?php $mem = \Member::find($helpMePost->idUser); echo '"/storage/pic/picMember/'.$mem->profilePic.'"' ; ?> >{{$helpMePost->userName}}</h5></div>
-                                  </a> <a  class="btn btn-primary btn-sm " 
-                                href="http://www.facebook.com/sharer.php?u= www.google.com">
+                          </div>
+                          <p class="Name">ชื่อสัตว์: {{$helpMePost->petName}} </p>
+                          <p class="habit">ความต้องการ : {{$helpMePost->needWhatForHelp}} </p>
+                           <p class="location">สถานที่ : {{$helpMePost->location}} </p>
+                          <div><a href = {{'/member/'.$helpMePost->idUser}}><h5><img class="media-object img-circle" style = "width:60; height:60px;" src = <?php $mem = \Member::find($helpMePost->idUser); echo '"/storage/pic/picMember/'.$mem->profilePic.'"' ; ?> >{{$helpMePost->userName}}</h5>
+                          </div></a> 
+                          <a  class="btn btn-primary btn-sm " target="_blank"
+                                href={{'"http://www.facebook.com/sharer.php?u= 23.101.30.133/helpMePost/'.$helpMePost->id.'"'}}>
                                       <font size="4"> <i class="fa fa-facebook-square fa-6"></i></font>
-                                 Share FB
-                            </a>
-                            <a class="btn btn-default" href={{ "/helpMePost/".$helpMePost->id }} >Read more</a>
-                        </div>
-                    </div>
-    				</div>
+                                 Share
+                          </a>
+                          <a class="btn btn-default" href={{ "/helpMePost/".$helpMePost->id }} >Read more</a>
+                        
+                      </div>
+                      </div>
+                    </div> 
                 </div>
-                      @endforeach
-            </div>
-    		
-            <br><br>
+                
+              
+ @if($t%4 == 0)
+      </div>
+       <br><br>
+
+         @endif
+               <?php
+               $t++;
+               ?>  
+                     
+                   
+                  
+              
+               @endforeach 
 
         
-    </div>
-	</div>
 
-	</section>
+      </div>
+	 </div>
+
+	 </section>
 	<!-- /Section: about -->
 
 </div>

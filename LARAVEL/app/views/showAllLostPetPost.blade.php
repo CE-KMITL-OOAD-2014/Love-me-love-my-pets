@@ -78,7 +78,7 @@
 
 
                @foreach($lostPetPosts as $lostPetPost)
-                     <div class="col-xs-6 col-sm-3 col-md-3">
+              <div class="col-xs-6 col-sm-3 col-md-3">
                 <div class="wow bounceInUp" data-wow-delay="0.2s">
                     <div class="team boxed-grey">
                         <div class="inner">
@@ -108,10 +108,10 @@
                             <p class="location">สถานที่ที่หาย : {{$lostPetPost->location}} </p>
                            <div  >
                            <a href = {{'/member/'.$lostPetPost->idUser}}><h5><img class="media-object img-circle" style = "width:60; height:60px;" src = <?php $mem = \Member::find($lostPetPost->idUser); echo '"/storage/pic/picMember/'.$mem->profilePic.'"' ; ?> >{{$lostPetPost->userName}}</h5></div>
-                                 </a> <a  class="btn btn-primary btn-sm " 
-                                href="http://www.facebook.com/sharer.php?u= www.google.com">
-                                     <font size="4"> <i class="fa fa-facebook-square fa-6"></i></font>
-                                 Share FB
+                                 </a> <a  class="btn btn-primary btn-sm " target="_blank"
+                                href={{'"http://www.facebook.com/sharer.php?u= 23.101.30.133/lostPetPost/'.$lostPetPost->id.'"'}}>
+                                     <font size="4"> <i class="fa fa-facebook-square fa-5"></i></font>
+                                 Share
                             </a>
                             <a class="btn btn-default" href={{ "/lostPetPost/".$lostPetPost->id }} >Read more</a>
                         </div>

@@ -102,10 +102,10 @@
                             <p class="Name">ชื่อสัตว์: {{$findAHomePost->petName}} </p>
                             <p class="habit">นิสัย : {{$findAHomePost->habit}} </p>
                             <p class="location">สถานที่ : {{$findAHomePost->location}} </p>
-                           <div  >      <a href = {{'/member/'.$findAHomePost->idUser}}><h5><img class="media-object img-circle" style = "width:60; height:60px;" src = <?php $mem = \Member::find($findAHomePost->idUser); echo '"/storage/pic/picMember/'.$mem->profilePic.'"' ; ?> >{{$findAHomePost->userName}}</h5></div>
-                            </a><a  class="btn btn-primary btn-sm " 
-                                href="http://www.facebook.com/sharer.php?u= www.google.com">
-                                   <font size="4"> <i class="fa fa-facebook-square fa-6"></i></font>  Share FB
+                           <div  >      <a href = {{'/member/'.$findAHomePost->idUser}}><h5><center><img class="media-object img-circle" style = "width:60; height:60px;" src = <?php $mem = \Member::find($findAHomePost->idUser); echo '"/storage/pic/picMember/'.$mem->profilePic.'"' ; ?> >{{$findAHomePost->userName}}</center></h5></div>
+                            </a><a  class="btn btn-primary btn-sm " target="_blank"
+                                href={{'"http://www.facebook.com/sharer.php?u= 23.101.30.133/findAHomePost/'.$findAHomePost->id.'"'}}>
+                                   <font size="4"> <i class="fa fa-facebook-square fa-6"></i></font>  Share
                             </a>
 
                             <a class="btn btn-default" href={{ "/findAHomePost/".$findAHomePost->id }} >Read more</a>

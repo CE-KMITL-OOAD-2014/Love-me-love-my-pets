@@ -23,7 +23,7 @@
 
 
 	<body>
-
+	@include('head')
 		<header id="navtop">
 		
 			<div class="container">
@@ -35,7 +35,7 @@
 				          <a href="/findAHomePost" class="btn btn-default" type="button">Find A Home Post</a>
 				          <a href="/helpMePost" class="btn btn-success" type="button">Help Me Post</a>
 				          <a href="/lostPetPost" class="btn btn-default" type="button">Lost Pet Post</a>
-				          <a href="/logout" class="btn btn-default" type="button">Log out</a>
+				        
 				               
 				               
 			          </div>
@@ -53,7 +53,7 @@
 
 						<div class="row" method="show" >
 							<h2><div class="col-xs-8" name = "subject" >{{$thisPost->subject}}</h2></div><br>
-							<p>Posted on <span class="created_at">{{$thisPost->created_at}}</span> by <a href={{"/member/".$thisPost->idUser}} >{{$thisPost->userName}}        <img img style = "width:80; height:80px;" src = <?php $mem = \Member::find($thisPost->idUser); echo '"/storage/pic/picMember/'.$mem->profilePic.'"' ; ?>  > </a> 
+							<p>Posted on <span class="created_at">{{$thisPost->created_at}}</span> by <a href={{"/member/".$thisPost->idUser}} >{{$thisPost->userName}}        <img img style = "width:40; height:40px;" src = <?php $mem = \Member::find($thisPost->idUser); echo '"/storage/pic/picMember/'.$mem->profilePic.'"' ; ?>  > </a> 
 						
 
 								<div class="row" method="show">
@@ -103,9 +103,10 @@
 
 							<br><br>
 
-</div>
-						</div> </div>
+					</div>
+					
 						
+						<div class="col-xs-12 col-md-8" >
 
 							<section class="section-comment">
 							
@@ -156,7 +157,7 @@
 							?>
 						</section>
 						<hr>
-
+					</div>
 
 					</div>
 				</div>
