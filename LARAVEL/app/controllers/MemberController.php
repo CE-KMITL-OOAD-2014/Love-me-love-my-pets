@@ -21,7 +21,6 @@ class MemberController extends BaseController {
 	
 		$mem = new core\CoreMember();
 		$newPassword = $mem->resetPass($realMember->id);
-
 			Mail::send('emails.resetPass',array('newPassword'=>$newPassword), function($message) use ($newPassword,$realMember)
 	{
   	$message->to($realMember->email, 'Love me, love my pets')
@@ -78,11 +77,11 @@ class MemberController extends BaseController {
 		//Auth::login('newMember');
 		//echo var_dump($newMember);
 		Auth::attempt($inputData);
-	/*	Mail::send('emails.regisOk',array('realNameSurName'=>$newMember->realNameSurName), function($message) use ($newMember)
+		Mail::send('emails.regisOk',array('realNameSurName'=>$newMember->realNameSurName), function($message) use ($newMember)
 	{
   	$message->to($newMember->email, 'Love me, love my pets')
           ->subject('Welcome to Love me, love my pets!');
-	});*/
+	});
 		return View::make('showDetailMember')->with('thisMember',$newMember);
 	//	return Redirect::to('/member/'.$id);//->with('thisMember',$newMember);
 		//return Redirect::action('MemberController@showDetailMember', $id);

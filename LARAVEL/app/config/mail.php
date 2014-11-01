@@ -93,7 +93,7 @@ return array(
 	|
 	*/
 
-	'password' => 'benzbenz', 
+	'password' => 'gnmeeqkhextiawhp', 
 	//
 	// ukslgqvbonwyfmsi
 	//gnmeeqkhextiawhp

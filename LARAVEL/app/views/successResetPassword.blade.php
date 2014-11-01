@@ -30,7 +30,7 @@
 				          <a href="/findAHomePost" class="btn btn-default" type="button">Find A Home Post</a>
 				          <a href="/helpMePost" class="btn btn-default" type="button">Help Me Post</a>
 				          <a href="/lostPetPost" class="btn btn-default" type="button">Lost Pet Post</a>
-				          <a href="/logout" class="btn btn-default" type="button">Log out</a>
+			
 				               
 			          </div>
 		         </div>

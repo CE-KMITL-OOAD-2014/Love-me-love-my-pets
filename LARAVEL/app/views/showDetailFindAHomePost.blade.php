@@ -23,10 +23,15 @@
 
 
 	<body>
-			@include('head')
+		
+
 		<header id="navtop">
 		
 			<div class="container">
+				<div class="col-xs-12 col-md-12">
+        			@include('head')
+    			</div>
+
 		        <div class="row">
 			          <div class="dropdown pull-right"><br>
 				          <a href="/" class="btn btn-default" type="button">Home</a>
