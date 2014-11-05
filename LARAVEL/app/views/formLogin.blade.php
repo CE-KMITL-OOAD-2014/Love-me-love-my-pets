@@ -34,8 +34,10 @@
                                 <div class="modal-footer">
                                    <center> <button class="btn btn-danger btn-lg btn-block" type="submit" >Sign In</button></center>
                                 </div>
-                                  <center> <a href= "/" ><h4>Back to Home</h4></a ></center>
-                
+                                     <left> <a href= "/" ><h4>Back to Home</h4></a ></left>
+                                  <left> <a href= "/register" ><h4>Register</h4></a ></left>
+                              
+                                    <right> <a href= "/forgotPassword" ><h4>Forgot Password?</h4></a ></right>
                         </form>
 
                  </div>
@@ -49,11 +51,6 @@
       </div>
     </div>
     </div></center>
-
-
-
-
-
     </body>
      
        <div class="text-center"><strong>Credit:</strong> Photo by 

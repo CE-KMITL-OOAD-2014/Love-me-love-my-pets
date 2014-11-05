@@ -13,10 +13,9 @@
 
 App::before(function($request)
 {
-	// if( ! Request::secure())
-  //  {
-  //      return Redirect::secure(Request::path());
-   // }
+	if(!Request::secure() && array_get($_SERVER, 'SERVER_PORT') != 443){
+        return Redirect::secure(Request::path());
+    }
 });
 
 

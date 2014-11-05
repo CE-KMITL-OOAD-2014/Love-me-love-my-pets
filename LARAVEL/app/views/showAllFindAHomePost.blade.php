@@ -88,9 +88,12 @@
                 
                 
                 <div class="col-xs-12 col-sm-3 col-md-3">
+
     				<div class="wow bounceInUp" data-wow-delay="0.2s">
                     <div class="team boxed-grey ">
-                        <div class="inner">
+                        
+                         <div class="inner">
+                      
                                 <?php if($findAHomePost->status == 0){
                          
                               if(Auth::check()){ echo'<form action="/helpedPost" method="POST">
@@ -109,17 +112,23 @@
                                 </span></font></div>'; 
                             }
                             ?>
+
                             <p class="subject">{{$findAHomePost->subject}}</p>
 
                             <div class="avatar">
                                 <img class="img-responsive" src= {{"storage/pic/picPost/".$findAHomePost->petImage}} >
                             </div>
 
-                            <p class="Name">ชื่อสัตว์: {{$findAHomePost->petName}} </p>
-                            <p class="habit">นิสัย : {{$findAHomePost->habit}} </p>
+
+
+                            <p class="Name" style="text-overflow: '...';">ชื่อสัตว์: {{$findAHomePost->petName}} </p>
+                            <p class="habit ">นิสัย : {{$findAHomePost->habit}} </p> 
+
                             <p class="location">สถานที่ : {{$findAHomePost->location}} </p>
-                            <a href = {{'/member/'.$findAHomePost->idUser}}><h5><center><img class="media-object img-circle" style = "width:60; height:60px;" src = <?php $mem = \Member::find($findAHomePost->idUser); echo '"/storage/pic/picMember/'.$mem->profilePic.'"' ; ?> >{{$findAHomePost->userName}}
+                            <a href = {{'/member/'.$findAHomePost->idUser}}><h5><center>
+                            <img class="media-object img-circle" style = "width:60; height:60px;" src = <?php $mem = \Member::find($findAHomePost->idUser); echo '"/storage/pic/picMember/'.$mem->profilePic.'"' ; ?> >{{$findAHomePost->userName}}
                             </center></h5></a>
+                     
 
                             <a  class="btn btn-primary btn-sm " target="_blank"
                                 href={{'"http://www.facebook.com/sharer.php?u= 23.101.30.133/findAHomePost/'.$findAHomePost->id.'"'}}>
@@ -127,6 +136,7 @@
                             </a>
 
                             <a class="btn btn-default" href={{ "/findAHomePost/".$findAHomePost->id }} >Read more</a>
+               
                         </div>
                     </div>
     				</div>

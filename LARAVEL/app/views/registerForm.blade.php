@@ -145,7 +145,7 @@
       						<div class="form-group">
        						<label class="col-xs-8 col-sm-2 control-label">Pets Image</label>
         						<div class="col-sm-offset-2 col-sm-10" >
-    								<input type='file' name = "petImage" required autofocus>
+    								<input type='file' name = "petImage" >
     							</div> <br>
       						</div>
     					</div>
@@ -154,7 +154,7 @@
                   <div class="form-group">
                   <label class="col-xs-8 col-sm-2 control-label">Profile Picture</label>
                     <div class="col-sm-offset-2 col-sm-10" >
-                    <input type='file' name = "profilePic" required autofocus>
+                    <input type='file' name = "profilePic" >
                   </div> <br>
                   </div>
               </div>

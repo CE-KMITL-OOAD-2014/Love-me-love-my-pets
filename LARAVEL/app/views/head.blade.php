@@ -1,25 +1,38 @@
 	<?php
 
 	if(Auth::check()) {echo '
-		<div class="col-xs-12 col-md-12">
+		<div class="col-xs-12 col-md-12">  
+	
 			<div class="container">
+					
+					<div class="dropdown pull-right"> <br>
+		     		 	 <a href="/logout" class="btn btn-default" type="button">Log out</a>
+		         	</div>
+	        
+				<br>
 
-				<div class="dropdown pull-right"><br>
-	     		 	 <a href="/logout" class="btn btn-default" type="button">Log out</a><br><br>
-	         	</div>
+				
+					<div class="dropdown pull-right">
+						<a href=  "/member/'.Auth::user()->id.'" ' ; echo'
 
-          
-			 	<div class="dropdown pull-right"><br>
-		     
-					<a href=  "/member/'.Auth::user()->id.'"' ; echo'
+						 class="btn btn-default" type="button"  >
 
-					 class="btn btn-default" type="button"  ><h4>'.Auth::user()->userName.'</h4><hr>
-				     	
-				     	<img 	class="media-object img-circle"  type="button" src="/storage/pic/picMember/'.Auth::user()->profilePic.'"' ;
-				     		 echo '	style = "width:100px; height:100px;"  ><br>View Profile</a> 
-				     </a> 
+							<div class="col-xs-6 col-md-6">
+						     	<img class="media-object img-circle"  type="button" src="/storage/pic/picMember/'
+						     	.Auth::user()->profilePic.'"' ;
 
-		         </div>
+						     	echo '	style = "width:90px; height:90px;" > 
+							</div>
+
+							<div class="col-xs-6 col-md-6">
+								
+								<h4>'.Auth::user()->userName.'</h4>
+								<div>View Profile</div>    
+							</div>
+					    </a>
+			        </div>
+			  
+			 	
 		    </div>
 	    </div> 
 ';}
