@@ -53,7 +53,7 @@
           </div>
 
     			<div class="col-xs-12">
-    				<form action="{{ url('/registered') }}" class="form-horizontal" role="form" method="post" enctype="multipart/form-data">
+    				<form action="/registered" class="form-horizontal" role="form" method="post" enctype="multipart/form-data">
     		
      <!--   @foreach($errors->all() as $message)
           <div class="row">
@@ -83,14 +83,7 @@
         					</div>
       					</div>
 
-           <!--     <div class="row">
-                  <div class="form-group">
-                  <label class="col-xs-8 col-md-2 control-label">ConfirmPassword</label>
-                    <div class="col-xs-8 col-md-5">
-                        <input type="password" name="Password_confirmation" class="form-control" placeholder="ยืนยันรหัสผ่าน" >
-                    </div>
-                  </div>
-                </div>-->
+        
 
       					<div class="row">
       						<div class="form-group">
@@ -120,7 +113,11 @@
         						</div>
       						</div>
       					</div>
-
+                <div style="color:#d9534f">
+              <?php
+                if(isset($error))echo $error;
+              ?>
+              </div>
                <div class="row">
                   <div class="form-group">
                   <label class="col-xs-8 col-md-2 control-label">E-Mail</label>

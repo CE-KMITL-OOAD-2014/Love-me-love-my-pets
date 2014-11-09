@@ -123,9 +123,11 @@
 								<header>
 								<hr>
 								<h5 class="fleft">{{ count($comments)." Comments" }}</h5> 
-								<p class="fright"><a href="#leavecomment" class="arrow">Leave your comment</a>
-								</p></header>
-							
+									<?php if(Auth::check()){
+								echo '<p class="fright"><a href="#leavecomment" class="arrow">Leave your comment</a>
+								</p></header>';
+							}
+							?>
 								<ol class="comments">
 
 									 @foreach($comments as $comment)

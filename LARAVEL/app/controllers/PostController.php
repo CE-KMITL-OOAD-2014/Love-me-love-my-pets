@@ -31,8 +31,7 @@
 				$newPost->setContact(Input::get('contact'));
 				$newPost->setStatus(0);
 				$newPost->setPostType(Input::get('postType'));
-				//$rightId = PostController::getRightId(Input::get('postType'));
-				//
+		
 				
 				$modelPost = $member->createPost($newPost);
 				$newPost->setIdPost($modelPost->id);
@@ -50,11 +49,7 @@
 				else{
 					return Redirect::to('/lostPetPost/'.$modelPost->id);
 				}
-			//	echo $extType;
-				
-				//$newPost->setPetImage($namePic);
-				//$member->updatePost($newPost);
-			//	echo "good night";*/
+
 				}
 
 

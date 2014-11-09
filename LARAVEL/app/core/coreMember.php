@@ -12,10 +12,7 @@ class CoreMember {
 	private $petName;
 	private $petImage;
 	private $profilePic;
-	/*private $post;
-	public function __construct (repository\MemberRepository $postIn){
-		$this->post = $postIn;
-	}*/
+
 
 	public function updatePic($newPost){
 		if($newPost->getPostType()=='findAHomePost')

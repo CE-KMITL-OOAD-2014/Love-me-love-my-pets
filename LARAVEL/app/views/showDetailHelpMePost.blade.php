@@ -70,7 +70,12 @@
 
 
 							<div class="col-xs-5 col-md-4" ><strong>ชนิดของสัตว์</div></strong>	
-							<div class="col-xs-7 " name = "petType"> {{$thisPost->postType}}</div><br><br>
+							<div class="col-xs-7 " name = "petType"> 
+							<?php
+							if($thisPost->petType == 0) echo "สัตว์จรจัด";
+							else echo "สัตว์เลี้ยง";
+							?>
+							</div><br><br>
 
 							<div class="col-xs-5 col-md-4" ><strong>รายละเอียด</div></strong>	
 							<div class="col-xs-7 " name = "content"> {{$thisPost->content}}</div><br><br>
@@ -117,9 +122,12 @@
 								<header>
 								<hr>
 								<h5 class="fleft">{{ count($comments)." Comments" }}</h5> 
-								<p class="fright"><a href="#leavecomment" class="arrow">Leave your comment</a>
-								</p></header>
-							
+
+								<?php if(Auth::check()){
+								echo '<p class="fright"><a href="#leavecomment" class="arrow">Leave your comment</a>
+								</p></header>';
+							}
+							?>
 								<ol class="comments">
 
 								 @foreach($comments as $comment)

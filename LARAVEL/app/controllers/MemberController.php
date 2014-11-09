@@ -10,8 +10,6 @@ class MemberController extends BaseController {
 		$thisMember = \Member::where('email','=',Input::get('email'))->get();;
 		$realMember = null;
 		foreach($thisMember as $thisM) { if($thisM!=null) $realMember = $thisM;}
-		/*if($realMember == null) echo 'f';
-		else echo $realMember->id;*/
 		if($realMember==null){
 
 			$error = 'invalid email! please try again';
@@ -31,9 +29,12 @@ class MemberController extends BaseController {
 		}
 	}
 	public function register(){
-	//	MemberController::checkValidate();\
+		if(!MemberController::checkValidate())
+			return View::make('registerForm')->with('error','Invalid Email! please try again!');
 
 		$newMember = new core\CoreMember();
+
+	// check if user upload petImage or not. If not we will set the anonymous image to the new member
 		if(Input::hasfile('petImage')){
 			$extType = Input::file('petImage')->guessExtension();
 			Input::file('petImage')->move("storage/pic/picPet",Input::get('userName').".".$extType);
@@ -43,6 +44,7 @@ class MemberController extends BaseController {
 			$newMember->setPetImage('anonymous.jpg');
 		}
 
+	// check if user upload petImage or not. If not we will set the anonymous image to the new member
 		if(Input::hasfile('profilePic')){
 			$extType2 = Input::file('profilePic')->guessExtension();
 			Input::file('profilePic')->move("storage/pic/picMember",Input::get('userName').".".$extType2);
@@ -52,8 +54,7 @@ class MemberController extends BaseController {
 			$newMember->setProfilePic('anonymous.jpg');
 		}
 
-	
-		//$newMember = $this->mem->fillInput($newMember);
+
 		$newMember->setUserName(Input::get('userName'));
 		$newMember->setPassword (Hash::make(Input::get('password')));
 		$newMember->setRealNameSurName(Input::get('realNameSurName'));
@@ -62,81 +63,54 @@ class MemberController extends BaseController {
 		$newMember->setEmail(Input::get('email'));
 		$newMember->setPetname(Input::get('petName'));
 		
-	
-		
-		
-	//	echo "f";
-	//	$error = $this->mem->checkSameUsernameOrEmail($newMember);
-	//	if($error== 'NULL'){
-	//	echo Input::file('petImage')->getMimeType();
+	// log in to the newMember profile
 		$inputData = array (
 			'userName' => Input::get('userName'),
 			'password' => Input::get('password'));
 		$newMember = $this->mem->saveToDB($newMember);
-		//echo $id;
-		//Auth::login('newMember');
-		//echo var_dump($newMember);
 		Auth::attempt($inputData);
+
+	// send email to welcome the new member
 		Mail::send('emails.regisOk',array('realNameSurName'=>$newMember->realNameSurName), function($message) use ($newMember)
 	{
   	$message->to($newMember->email, 'Love me, love my pets')
           ->subject('Welcome to Love me, love my pets!');
 	});
-		return View::make('showDetailMember')->with('thisMember',$newMember);
-	//	return Redirect::to('/member/'.$id);//->with('thisMember',$newMember);
-		//return Redirect::action('MemberController@showDetailMember', $id);
-		//}
-	//	else return View::make('userForm')->with('error',$error);
+
+	return View::make('showDetailMember')->with('thisMember',$newMember);
 	}
 
 	public function logIn(){
 		$inputData = array (
 			'userName' => Input::get('userName'),
 			'password' => Input::get('password'));
-		//echo var_dump( Hash::check('cat','$2y$10$w9m8EImrrnzxuhQEZDC7f.vXA.aNJez5ofktuZJZ9ZqtIZFxuhm1u') );
 		if (Auth::attempt($inputData))
 			return Redirect::intended('/');
 		else return Redirect::to('/login');
-		/*$mem = Member::find(50);
-		echo $mem->userName;
-		echo $mem->password;*/
-	
-		/*echo Hash::make('cat');
-		echo"           ";
-		echo Hash::make('cat');
-		echo"           ";
-		$k = Hash::make('cat');
-		echo var_dump( Hash::check('cat',$k) );*/
 	}
 
-	public function hello(){
-			if (Auth::check()) return View::make('hello');
-			else return View::make('login');
-	}
 	public function logout(){
 		Auth::logout();
-		return Redirect::to('/');
+		return Redirect::intended('/');
 	}
 
 	public static function checkValidate(){
 		$allInput = Input::all();
 		$rules = array(
-	'username' => 'alpha_num|min:3|max:32|unique:userName|userName',
-	'password' => 'confirm|min:3'
+	'email' => 'email'
 		);
 
 		$validator = Validator::make($allInput, $rules);
 
 		if ($validator->passes()) {
 			
-			echo "hereeeeeeeeeeeeeeeeeeeee";
+		 return true;
 		}
-
+		else return false;
 
 }
 	public function showDetailMember($id){
 		$thatMember = \Member::find($id);
-	//	echo $thatMember->id;
 		return View::make('showDetailMember')->with('thisMember',$thatMember);
 	}	
 
@@ -191,54 +165,4 @@ class MemberController extends BaseController {
 		return Redirect::to('/thanks');
 	}
 }
-	/*
-	interface Register{
-		public function regis();
-	}
-	class RealRegister implements Register{
-		public function regis(){
-			$newMember =  new RealMember();
-			$fillValues = new FillValuesMember();
-			$newMember = $fillValues->fill($newMember);
-			$forSave = new SaveMember();
-			$forsave.save($newMember);
-		}
-	}
-
-	interface FillValuesMember{
-		public function fill($newMember);
-	}
-
-	class realFillValuesMember implements FillValuesMember {
-		public function fill($newMember){
-			$newMember->userName = Input::get('userName');
-			$newMember->password = Input::get('password');
-			$newMember->realNameSurName = Input::get('realNameSurName');
-			$newMember->age = Input::get('age');
-			$newMember->address = Input::get('address');
-			$newMember->email = Input::get('email');
-			$newMember->petname = Input::get('petName');
-			$newMember->petImage = Input::get('petImage');
-			return $newMember;
-		}
-	}
-
-	interface SaveMember{
-		public function save($newMember);
-	}
-
-	class RealSaveMember implements SaveMember{
-		public function save($newMember){
-			$mem = new Member();
-			$mem->userName = $newMember->getUserName();
-			$mem->password = $newMember->getPassword();
-			$mem->realNameSurName = $newMember->getRealNameSurName();
-			$mem->age = $newMember->getAge();
-			$mem->address = $newMember->getAddress();
-			$mem->email = $newMember->getEmail();
-			$mem->petName = $newMember->getPetName();
-			$mem->petImage = $newMember->getPetImage();
-			$mem->save();
-		}
-	}*/
 	?>

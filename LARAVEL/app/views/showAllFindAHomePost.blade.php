@@ -21,12 +21,14 @@
 
 </head>
 
+<div class="col-xs-12">
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-custom" >
 <div class="col-xs-12 col-md-12">
         @include('head')
     </div>
-
+ 
+ 
     <div class="container">
         <div class="col-xs-12 col-md-12">
             <!--One share for one better life.-->
@@ -160,8 +162,8 @@
 </div>
 
 
-
 </body>
-	
+</div>
+
 <footer>@include('footer')</footer>
 </html>
