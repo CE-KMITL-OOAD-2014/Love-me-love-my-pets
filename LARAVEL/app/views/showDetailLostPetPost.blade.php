@@ -64,20 +64,19 @@
 
 						<div class="row" method="show">
 							<div class="col-xs-5 col-md-4" ><strong>ชื่อของสัตว์</div></strong>  
-							<div class="col-xs-7 " name = "petName" >{{$thisPost->petName}}</div><br><br>
+							<div class="col-xs-7 " name = "petName" >{{$thisPost->petName}}<br><br></div>
 
 
-							<div class="col-xs-5 col-md-4" ><strong>ชนิดของสัตว์</div></strong>	
-							<div class="col-xs-7 " name = "petType"> {{$thisPost->postType}}</div><br><br>
+				
 
 							<div class="col-xs-5 col-md-4" ><strong>รายละเอียด</div></strong>	
-							<div class="col-xs-7 " name = "content"> {{$thisPost->content}}</div><br><br>
+							<div class="col-xs-7 " name = "content"> {{$thisPost->content}}<br><br></div>
 
 							<div class="col-xs-5 col-md-4" ><strong>สถานที่</div></strong>		
-							<div class="col-xs-7 " name = "location">{{$thisPost->location}} </div><br><br>
+							<div class="col-xs-7 " name = "location">{{$thisPost->location}} <br><br></div>
 
 							<div class="col-xs-5 col-md-4" ><strong>ลักษณะที่เด่นชัด</div></strong>	
-							<div class="col-xs-7" name = "uniqueApperance">{{$thisPost->uniqueApperance}}</div><br><br>
+							<div class="col-xs-7" name = "uniqueApperance">{{$thisPost->uniqueApperance}}<br><br></div>
 
 
 						</div>

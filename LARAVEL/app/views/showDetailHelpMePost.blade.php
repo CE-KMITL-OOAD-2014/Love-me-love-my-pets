@@ -78,19 +78,19 @@
 							</div><br><br>
 
 							<div class="col-xs-5 col-md-4" ><strong>รายละเอียด</div></strong>	
-							<div class="col-xs-7 " name = "content"> {{$thisPost->content}}</div><br><br>
+							<div class="col-xs-7 " name = "content"> {{$thisPost->content}}<br><br></div>
 
 							<div class="col-xs-5 col-md-4" ><strong>สถานที่</div></strong>		
-							<div class="col-xs-7 " name = "location">{{$thisPost->location}} </div><br><br>
+							<div class="col-xs-7 " name = "location">{{$thisPost->location}} <br><br></div>
 
 							<div class="col-xs-5 col-md-4" ><strong>ความช่วยเหลือที่ต้องการ</div></strong>	
-							<div class="col-xs-7" name = "needWhatForHelp">{{$thisPost->needWhatForHelp}}</div><br><br>
+							<div class="col-xs-7" name = "needWhatForHelp">{{$thisPost->needWhatForHelp}}<br><br></div>
 
 						</div>
 						
 						<div class="row" method="show">
 							<div class="col-xs-5 col-md-4" ><strong>ติดต่อกลับ</div></strong>	
-							<div class="col-xs-7" name = "contact">{{$thisPost->contact}} </div><br><br>
+							<div class="col-xs-7" name = "contact">{{$thisPost->contact}} <br><br></div>
 
 
 					

@@ -81,25 +81,25 @@
 							</div><br><br>
 
 							<div class="col-xs-5 col-md-4" ><strong>รายละเอียด</div></strong>	
-							<div class="col-xs-7 " name = "content"> {{$thisPost->content}}</div><br><br>
+							<div class="col-xs-7 " name = "content"> {{$thisPost->content}}<br><br></div>
 
 							<div class="col-xs-5 col-md-4" ><strong>สถานที่</div></strong>		
-							<div class="col-xs-7 " name = "location">{{$thisPost->location}} </div><br><br>
+							<div class="col-xs-7 " name = "location">{{$thisPost->location}} <br><br></div>
 
 							<div class="col-xs-5 col-md-4" ><strong>ลักษณะนิสัยของสัตว์</div></strong>	
-							<div class="col-xs-7" name = "habit"> {{$thisPost->habit}}</div><br><br>
+							<div class="col-xs-7" name = "habit"> {{$thisPost->habit}}<br><br></div>
 
 						</div>
 
 						<div class="row" method="show">
 
 							<div class="col-xs-5 col-md-4" ><strong>ความต้องการพิเศษ</div></strong>		
-							<div class="col-xs-7" name = "specificRequire"> {{$thisPost->specificRequire}}</div><br><br>
+							<div class="col-xs-7" name = "specificRequire"> {{$thisPost->specificRequire}}<br><br></div>
 						</div>
 
 						<div class="row" method="show">
 							<div class="col-xs-5 col-md-4" ><strong>ติดต่อกลับ</div></strong>	
-							<div class="col-xs-7" name = "contact">{{$thisPost->contact}} </div><br><br>
+							<div class="col-xs-7" name = "contact">{{$thisPost->contact}} <br><br></div>
 
 					
 							<div class="col-xs-5 col-md-4" ><strong>สถานะการช่วยเหลือ</div></strong>	

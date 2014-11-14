@@ -58,8 +58,8 @@
 
             <div class="row">
               <div class="form-group">
-              <label class="col-xs-8 col-md-3 control-label">ชื่อหัวข้อ</label>
-                <div class="col-xs-11 col-md-6">
+              <label class="col-xs-8 col-md-3 col-sm-3 control-label">ชื่อหัวข้อ</label>
+                <div class="col-xs-11 col-md-6 col-sm-6">
                     <input type="string" name="subject" class="form-control" required autofocus>
                 </div>
               </div>
@@ -67,8 +67,8 @@
 
             <div class="row">
               <div class="form-group">
-              <label class="col-xs-8 col-md-3 control-label">รายละเอียด</label>
-                <div class="col-xs-11 col-md-6">
+              <label class="col-xs-8 col-md-3 col-sm-3 control-label">รายละเอียด</label>
+                <div class="col-xs-11 col-md-6 col-sm-6">
                     <textarea type="text"  name="content" rows="5" class="form-control" required autofocus></textarea>
                 </div>
               </div>
@@ -77,8 +77,8 @@
 
           <div class="row">
               <div class="form-group">
-              <label class="col-xs-8 col-md-3 control-label">ชื่อของสัตว์</label>
-                <div class="col-xs-11 col-md-6">
+              <label class="col-xs-8 col-md-3 col-sm-3 control-label">ชื่อของสัตว์</label>
+                <div class="col-xs-11 col-md-6 col-sm-6">
                     <input type="string" name="petName" class="form-control" required autofocus>
                 </div>
               </div>
@@ -86,8 +86,8 @@
 
           <div class="row">
               <div class="form-group">
-              <label class="col-xs-8 col-md-3 control-label">รูปของสัตว์*</label>
-                <div class="col-md-5" >
+              <label class="col-xs-8 col-sm-2 col-sm-offset-1  control-label">รูปของสัตว์</label>
+                <div class="col-sm-10 col-sm-offset-3" >
                 <input type="file" name = "petImage" required autofocus >
                 </div> <br>
               </div>
@@ -95,8 +95,8 @@
 
           <div class="row">
               <div class="form-group">
-              <label class="col-xs-8 col-md-3 control-label">สถานที่ที่สัตว์หาย</label>
-                <div class="col-xs-11 col-md-6">
+              <label class="col-xs-8 col-md-3 col-sm-3 control-label">สถานที่ที่สัตว์หาย</label>
+                <div class="col-xs-11 col-md-6 col-sm-6">
                     <input type="string" name="location"  class="form-control" required autofocus>
                 </div>
               </div>
@@ -105,8 +105,8 @@
 
           <div class="row">
               <div class="form-group">
-              <label class="col-xs-8 col-md-3 control-label">ลักษณะที่เด่นชัด</label>
-                <div class="col-xs-11 col-md-6">
+              <label class="col-xs-8 col-md-3 col-sm-3 control-label">ลักษณะที่เด่นชัด</label>
+                <div class="col-xs-11 col-md-6 col-sm-6">
                     <input type="string" name="uniqueApperance"  class="form-control" required autofocus>
                 </div>
               </div>
@@ -114,8 +114,8 @@
 
           <div class="row">
               <div class="form-group">
-              <label class="col-xs-8 col-md-3 control-label">เวลาที่สัตว์หาย</label>
-                <div class="col-xs-11 col-md-6">
+              <label class="col-xs-8 col-md-3 col-sm-3 control-label">เวลาที่สัตว์หาย</label>
+                <div class="col-xs-11 col-md-6 col-sm-6">
                     <input type="string" name="timeLost"  class="form-control" required autofocus>
                 </div>
               </div>
@@ -123,8 +123,8 @@
 
           <div class="row">
               <div class="form-group">
-              <label class="col-xs-8 col-md-3 control-label">วันที่สัตว์หาย</label>
-                <div class="col-xs-11 col-md-6">
+              <label class="col-xs-8 col-md-3 col-sm-3 control-label">วันที่สัตว์หาย</label>
+                <div class="col-xs-11 col-md-6 col-sm-6">
                     <input  type="date" name="dateLost"  class="form-control" required autofocus>
                 </div>
               </div>
@@ -134,8 +134,8 @@
 
            <div class="row">
               <div class="form-group">
-              <label class="col-xs-8 col-md-3 control-label">ติดต่อกลับ</label>
-                <div class="col-xs-11 col-md-6">
+              <label class="col-xs-8 col-md-3 col-sm-3 control-label">ติดต่อกลับ</label>
+                <div class="col-xs-11 col-md-6 col-sm-6">
                     <input type="string" name="contact"  class="form-control" required autofocus>
                 </div>
               </div>
@@ -144,9 +144,9 @@
          
            <div class="row">
               <div class="form-group">
-              <label class="col-xs-8 col-md-3 control-label">ประเภทของการโพสต์</label>
-                <div class="col-xs-11 col-md-6">
-                    <input type="string" name="postType"  value="lostPetPost" class="form-control" required autofocus>
+             
+                <div class="col-xs-11 col-md-6 col-sm-6">
+                    <input type="hidden" name="postType"  value="lostPetPost" class="form-control" required autofocus>
                 </div>
               </div>
             </div>
@@ -154,7 +154,7 @@
     
             <div class="row">
             <div class="form-group">
-                <div class="col-md-offset-3 col-md-4">
+                <div class="col-md-offset-3 col-sm-offset-3 col-md-4">
                     <input class="btn btn-default"  type="submit" value="Post" >
                 </div>
               </div>

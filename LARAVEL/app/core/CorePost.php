@@ -3,8 +3,7 @@ namespace core;
 
 Class CorePost {
     private $idPost;
-    private $idUser;
-	private $userName;
+    private $userPost;
 	private $subject;
 	private $content;
 	private $petName;
@@ -16,19 +15,22 @@ Class CorePost {
 	private $postType;
 	private $created_at;
 
+	public function setUserPost($userIn){
+		$this->userPost = $userIn;
+	}
 	public function setIdUser($idUserIn){
-		 $this->idUser = $idUserIn;
+		 $this->userPost->setId($idUserIn);
 	}
 
 	public function getIdUser(){
-		return $this->idUser;
+		return  $this->userPost->getId();
 	}
 	public function getIdPost(){
 		return $this->idPost;
 	}
 
 	public function getUserName(){
-		return $this->userName;
+		return  $this->userPost->getUserName();
 	}
 
 	public function getSubject(){
@@ -76,7 +78,7 @@ Class CorePost {
 	}
 
 	public function setUserName($UsernameIn){
-		$this->userName = $UsernameIn;
+		 $this->userPost->setUserName($UsernameIn);
 	}
 
 	public function setSubject($subjectIn){

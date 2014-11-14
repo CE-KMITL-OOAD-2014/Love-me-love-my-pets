@@ -2,10 +2,12 @@
 	class PostController extends BaseController {
 			public function createPost(){
 				$member = core\CoreMember::getObjectFromEloquent(Auth::user());
+
 				$extType = Input::file('petImage')->guessExtension();
 				$memPost = Auth::user();
 				if(Input::get('postType')=='findAHomePost'){
 					$newPost = new core\CoreFindAHomePost();
+					$newPost->setUserPost($member);
 					$newPost->setPetType(Input::get('petType'));
 					$newPost->setHabit(Input::get('habit'));
 					$newPost->setSpecificRequire(Input::get('specificRequire'));
@@ -13,11 +15,13 @@
 
 				else if(Input::get('postType')=='helpMePost'){
 					$newPost = new core\CoreHelpMePost();
+					$newPost->setUserPost($member);
 					$newPost->setPetType(Input::get('petType'));
 					$newPost->setNeedWhatForHelp(Input::get('needWhatForHelp'));
 				}
 				else if(Input::get('postType')=='lostPetPost'){
 					$newPost = new core\CoreLostPetPost();
+					$newPost->setUserPost($member);
 					$newPost->setUniqueApperance(Input::get('uniqueApperance'));
 					$newPost->setTimeLost(Input::get('timeLost'));
 					$newPost->setDateLost(Input::get('dateLost'));

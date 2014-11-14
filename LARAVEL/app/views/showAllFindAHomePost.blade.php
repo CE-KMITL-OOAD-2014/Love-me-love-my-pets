@@ -24,13 +24,12 @@
 <div class="col-xs-12">
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-custom" >
-<div class="col-xs-12 col-md-12">
+    <div class="col-xs-12 col-md-12">
         @include('head')
     </div>
  
  
     <div class="container">
-        <div class="col-xs-12 col-md-12">
             <!--One share for one better life.-->
             <div class="dropdown pull-right"><br>
               <a href="/" class="btn btn-warning" type="button">Home</a>
@@ -38,7 +37,6 @@
               <a href="/helpMePost" class="btn btn-success" type="button">Help Me Post</a>
               <a href="/lostPetPost" class="btn btn-danger" type="button">Lost Pet Post</a>      
             </div> 
-        </div>
     </div> 
 
     <div style ="background-color:#cff5fb">
@@ -49,28 +47,22 @@
 
     			<div class="row">
     				<div class="col-lg-8 col-lg-offset-2">
-    					<div class="wow bounceInDown" data-wow-delay="0.2s">
-        					<div class="section-heading">
+    				    <div class="wow bounceInDown" data-wow-delay="0.2s">
+        				<div class="section-heading">
                                 <h2>Main Post</h2>
-            			        <div style="color:#428bca"><h3>Find A Home Post</h3></div>
-
-                                <div class="row">
-                                    <div class="col-lg-2 col-lg-offset-5">
-                                        <hr class="marginbot-50">
-                                    </div>
-                                </div>
-                               <i class="fa fa-2x fa-angle-down"></i>
-        					</div>
+            			     <div style="color:#428bca"><h3>Find A Home Post</h3></div>
+                             <div style="color:#428bca"><h3>[โพสต์หาบ้านให้สัตว์]</h3></div>
+                             <i class="fa fa-2x fa-angle-down"></i>
+                       
+        				</div>
     					</div>
-                         
     				</div>
           
                     <div class="pull-right">
-                            <a href="/postFindAHome" class="btn btn-primary" type="button">+ Create Post</a>
-                    <br> 
-                    </div>
+                        <a href="/postFindAHome" class="btn btn-primary" type="button">+ Create Post</a>
+                    </div><br> 
+                    
     			</div>
-
 			</div>
 		</div>
 
@@ -96,7 +88,8 @@
                         
                          <div class="inner">
                       
-                                <?php if($findAHomePost->status == 0){
+                             <?php 
+                                if($findAHomePost->status == 0){
                          
                               if(Auth::check()){ echo'<form action="/helpedPost" method="POST">
                               <input type="hidden" name = "postType" value="findAHomePost">
@@ -157,13 +150,12 @@
                 @endforeach
 
 	   </div>
+    </div>
 
-</section>
-</div>
+    </section>
+
 
 
 </body>
-</div>
-
-<footer>@include('footer')</footer>
+    <footer>@include('footer')</footer>
 </html>

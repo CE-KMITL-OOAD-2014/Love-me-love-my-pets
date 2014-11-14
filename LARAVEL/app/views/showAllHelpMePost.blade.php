@@ -48,14 +48,9 @@
 					<div class="section-heading">
                     <h2>Main Post</h2>
 			        <div style="color:#5cb85c"><h3>Help Me Post</h3></div>
-
-                    <div class="row">
-                        <div class="col-lg-2 col-lg-offset-5">
-                            <hr class="marginbot-50">
-                        </div>
-                    </div>
-
-                    <i class="fa fa-2x fa-angle-down"></i>
+              <div style="color:#5cb85c"><h3>[โพสต์ขอความช่วยเหลือ]</h3></div>
+              <i class="fa fa-2x fa-angle-down"></i>
+             
 					</div>
 					</div>
 				</div>
