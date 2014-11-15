@@ -41,7 +41,7 @@ else echo '  <div class="dropdown pull-right"><br>
   				
   			<a href="/login" class="btn btn-danger" type="button">Log in</a>
   		
-  			<a href="/forgotPassword" class="btn btn-success" type="button">Forgot password?</a>
+  			<a href="/forgotPassword" class="btn btn-success"  type="button">Forgot password?</a>
 		 <hr></div>'
 		 ;
 	?>

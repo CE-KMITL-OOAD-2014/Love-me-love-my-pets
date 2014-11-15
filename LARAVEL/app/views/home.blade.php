@@ -36,7 +36,13 @@
 				<div class="row">
 				   <section id="intro" class="intro">
 						<div class="slogan  col-xs-12 col-md-offset-2">
-							<font style="color:#FF0066"><h1>WELCOME TO </font> Love me Love my pets</h1> 
+							<font style="color:#FF0066"><h1><b>WELCOME TO </font> Love me Love my pets 
+
+<div class="glyphicon glyphicon-heart" style="color:#FF0066" >
+
+</div></h1>
+					
+							 </b>
 							<h4>The social of pet's lover for share the love to the pets all around the world</h4>
 							<div style="color:#FF0066"><h4>สังคมของคนรักสัตว์ที่จะร่วมกันแบ่งปันความรักไปให้สัตว์ อย่างไม่สิ้นสุด</h4></div>
 						</div>
@@ -88,8 +94,8 @@
 							      navigation : true, // Show next and prev buttons
 							      slideSpeed : 300,
 							      paginationSpeed : 400,
-							      singleItem:true
-							 
+							      singleItem:true,
+							 	autoPlay: 3000
 							      // "singleItem:true" is a shortcut for:
 							      // items : 1, 
 							      // itemsDesktop : false,
@@ -120,26 +126,34 @@
 
 					  <div class="col-md-4 text-center">
 					      <img class="img-circle" src="pic1.jpg">
-					     <font style="color:#FF0066">  <h3>Find A Home Post</h3></font>
+					     <font style="color:#FF0066">  <h3>Find A Home Post 
+<div class="glyphicon glyphicon-home" style="color:#FF0066" >
+</div>
+					     </h3></font>
 					      <h3>หัวข้อ หาบ้านให้สัตว์น้อย</h3>
 					      <p>มีสัตว์อีกมากมายที่รอคอยความรัก ความอบอุ่น จากอ้อมกอดของคุณอยู่ อย่ารอช้าที่จะแบ่งปันความรักไปให้เขา</p>
-					      <p><a class="btn btn-default" href="/findAHomePost">View details »</a></p>
+					      <p><a class="btn btn-info" href="/findAHomePost">View details »</a></p>
 					  </div>
 
 					  <div class="col-md-4 text-center">
 					      <img class="img-circle" src="pic2.jpg">
-					     <font style="color:#FF0066">  <h3>Help Me Post</h3></font>
+					     <font style="color:#FF0066">  <h3>Help Me Post
+
+					     <div class="glyphicon glyphicon-volume-up" style="color:#FF0066" >
+</div></h3></font>
 					      <h3>หัวข้อ สัตว์ขอความช่วยเหลือ</h3>
 					      <p>มีสัตว์มากมาย รอคอยความช่วยเหลือของคุณอยู่ อย่าให้เขารอเก้อ ไปช่วยสัตว์เหล่านี้กันเถอะ!</p>
-					      <p><a class="btn btn-default" href="/helpMePost">View details »</a></p>
+					      <p><a class="btn btn-info" href="/helpMePost">View details »</a></p>
 					  </div>
 
 					  <div class="col-md-4 text-center">
 					      <img class="img-circle" src="pic3.jpg">
-					   <font style="color:#FF0066">  <h3>Lost Pet Post</h3></font>
+					   <font style="color:#FF0066">  <h3>Lost Pet Post
+					   <div class="glyphicon glyphicon-eye-open" style="color:#FF0066" >
+</div></h3></font>
 					      <h3>หัวข้อ ประกาศสัตว์หาย</h3>
 					      <p>หากคุณเห็นสัตว์น้อยหน้าใหม่ เดินเข้ามาในละแวกบ้านคุณ นั่นอาจเป็นสัตว์เลี้ยงแสนรักของใครสักคน ที่กำลังตามหาเขาอยู่ แวะเข้ามาดูกันนะ</p>
-					      <p><a class="btn btn-default" href="/lostPetPost">View details »</a></p>
+					      <p><a class="btn btn-info" href="/lostPetPost">View details »</a></p>
 					  </div>
 				</div> <!-- /.row -->
 			</div>
