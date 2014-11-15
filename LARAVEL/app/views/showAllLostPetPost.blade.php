@@ -109,9 +109,9 @@
                             <div class="avatar">
                             <img style = class="img-responsive" src= {{"storage/pic/picPost/".$lostPetPost->petImage}} class="img-responsive" >
                             </div>
-                            <p class="Name">ชื่อสัตว์: {{$lostPetPost->petName}} </p>
-                            <p class="habit">ลักษณะเด่นชัด : {{$lostPetPost->uniqueApperance}} </p>
-                            <p class="location">สถานที่ที่หาย : {{$lostPetPost->location}} </p>
+                            <p class="Name"><b>ชื่อสัตว์:</b> {{$lostPetPost->petName}} </p>
+                            <p class="habit"><b>ลักษณะเด่นชัด :</b> {{$lostPetPost->uniqueApperance}} </p>
+                            <p class="location"><b>สถานที่ที่หาย :</b> {{$lostPetPost->location}} </p>
                           
                            <a href = {{'/member/'.$lostPetPost->idUser}}><h5><center>
                                 <img class="media-object img-circle" style = "width:60; height:60px;" src = <?php $mem = \Member::find($lostPetPost->idUser); echo '"/storage/pic/picMember/'.$mem->profilePic.'"' ; ?> >{{$lostPetPost->userName}}</h5>

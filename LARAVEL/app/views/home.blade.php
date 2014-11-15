@@ -36,8 +36,9 @@
 				<div class="row">
 				   <section id="intro" class="intro">
 						<div class="slogan  col-xs-12 col-md-offset-2">
-							<h1>WELCOME TO <span class="text_color">Love me Love my pets</span> </h1>
+							<font style="color:#FF0066"><h1>WELCOME TO </font> Love me Love my pets</h1> 
 							<h4>The social of pet's lover for share the love to the pets all around the world</h4>
+							<div style="color:#FF0066"><h4>สังคมของคนรักสัตว์ที่จะร่วมกันแบ่งปันความรักไปให้สัตว์ อย่างไม่สิ้นสุด</h4></div>
 						</div>
 						<div class="page-scroll">
 							<a href="#service" class="btn btn-circle">
@@ -119,22 +120,25 @@
 
 					  <div class="col-md-4 text-center">
 					      <img class="img-circle" src="pic1.jpg">
-					      <h3>Find A Home Post</h3>
-					      <p>The lovely pets are waiting for the warm home</p>
+					     <font style="color:#FF0066">  <h3>Find A Home Post</h3></font>
+					      <h3>หัวข้อ หาบ้านให้สัตว์น้อย</h3>
+					      <p>มีสัตว์อีกมากมายที่รอคอยความรัก ความอบอุ่น จากอ้อมกอดของคุณอยู่ อย่ารอช้าที่จะแบ่งปันความรักไปให้เขา</p>
 					      <p><a class="btn btn-default" href="/findAHomePost">View details »</a></p>
 					  </div>
 
 					  <div class="col-md-4 text-center">
 					      <img class="img-circle" src="pic2.jpg">
-					      <h3>Help Me Post</h3>
-					      <p>Let's help them for their better life</p>
+					     <font style="color:#FF0066">  <h3>Help Me Post</h3></font>
+					      <h3>หัวข้อ สัตว์ขอความช่วยเหลือ</h3>
+					      <p>มีสัตว์มากมาย รอคอยความช่วยเหลือของคุณอยู่ อย่าให้เขารอเก้อ ไปช่วยสัตว์เหล่านี้กันเถอะ!</p>
 					      <p><a class="btn btn-default" href="/helpMePost">View details »</a></p>
 					  </div>
 
 					  <div class="col-md-4 text-center">
 					      <img class="img-circle" src="pic3.jpg">
-					      <h3>Lost Pet Post</h3>
-					      <p>If your pet is lost. Let's post on this topic.</p>
+					   <font style="color:#FF0066">  <h3>Lost Pet Post</h3></font>
+					      <h3>หัวข้อ ประกาศสัตว์หาย</h3>
+					      <p>หากคุณเห็นสัตว์น้อยหน้าใหม่ เดินเข้ามาในละแวกบ้านคุณ นั่นอาจเป็นสัตว์เลี้ยงแสนรักของใครสักคน ที่กำลังตามหาเขาอยู่ แวะเข้ามาดูกันนะ</p>
 					      <p><a class="btn btn-default" href="/lostPetPost">View details »</a></p>
 					  </div>
 				</div> <!-- /.row -->

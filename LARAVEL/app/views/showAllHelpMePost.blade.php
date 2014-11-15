@@ -106,9 +106,9 @@
                           <div class="avatar">
                             <img src= {{"storage/pic/picPost/".$helpMePost->petImage}} class="img-responsive" >
                           </div>
-                          <p class="Name">ชื่อสัตว์: {{$helpMePost->petName}} </p>
-                          <p class="habit">ความต้องการ : {{$helpMePost->needWhatForHelp}} </p>
-                           <p class="location">สถานที่ : {{$helpMePost->location}} </p>
+                          <p class="Name"><b>ชื่อสัตว์:</b> {{$helpMePost->petName}} </p>
+                          <p class="habit"><b>ความต้องการ :</b> {{$helpMePost->needWhatForHelp}} </p>
+                           <p class="location"><b>สถานที่ :</b> {{$helpMePost->location}} </p>
                           <div><a href = {{'/member/'.$helpMePost->idUser}}><h5><center><img class="media-object img-circle" style = "width:60; height:60px;" src = <?php $mem = \Member::find($helpMePost->idUser); echo '"/storage/pic/picMember/'.$mem->profilePic.'"' ; ?> >{{$helpMePost->userName}}</h5>
                           </center></div></a> 
                           <a  class="btn btn-primary btn-sm " target="_blank"

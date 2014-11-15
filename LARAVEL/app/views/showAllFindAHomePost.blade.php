@@ -2,7 +2,8 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
+
+ <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -39,7 +40,7 @@
             </div> 
     </div> 
 
-    <div style ="background-color:#cff5fb">
+<div style ="background-color:#cff5fb">
 <!-- Section: about -->
     <section id="about" class="home-section text-center">
 		<div class="heading-about">
@@ -116,17 +117,17 @@
 
 
 
-                            <p class="Name" style="text-overflow: '...';">ชื่อสัตว์: {{$findAHomePost->petName}} </p>
-                            <p class="habit ">นิสัย : {{$findAHomePost->habit}} </p> 
+                            <p class="Name" style="text-overflow: '...';"><b>ชื่อสัตว์: </b>{{$findAHomePost->petName}} </p>
+                            <p class="habit "><b>นิสัย</b> : {{$findAHomePost->habit}} </p> 
 
-                            <p class="location">สถานที่ : {{$findAHomePost->location}} </p>
+                            <p class="location"><b>สถานที่ </b>: {{$findAHomePost->location}} </p>
                             <a href = {{'/member/'.$findAHomePost->idUser}}><h5><center>
                             <img class="media-object img-circle" style = "width:60; height:60px;" src = <?php $mem = \Member::find($findAHomePost->idUser); echo '"/storage/pic/picMember/'.$mem->profilePic.'"' ; ?> >{{$findAHomePost->userName}}
                             </center></h5></a>
                      
 
                             <a  class="btn btn-primary btn-sm " target="_blank"
-                                href={{'"http://www.facebook.com/sharer.php?u= 23.101.30.133/findAHomePost/'.$findAHomePost->id.'"'}}>
+                                 href={{'"http://www.facebook.com/sharer.php?u= 23.101.30.133/findAHomePost/'.$findAHomePost->id.'"'}}>
                                    <font size="4"> <i class="fa fa-facebook-square fa-6"></i></font>  Share
                             </a>
 
@@ -150,10 +151,10 @@
                 @endforeach
 
 	   </div>
-    </div>
+   
 
     </section>
-
+ </div>
 
 
 </body>

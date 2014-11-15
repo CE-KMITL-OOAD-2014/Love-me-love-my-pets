@@ -98,7 +98,7 @@
           <div class="row">
               <div class="form-group">
                 <label class="col-xs-8 col-md-3 col-sm-3 control-label">ชนิดของสัตว์</label>
-                  <div class="col-xs-11 col-md-5">
+                  <div class="col-xs-11 col-sm-5 col-md-5">
 
                     <div class="radio">
                       <label>
