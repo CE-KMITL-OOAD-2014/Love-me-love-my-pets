@@ -77,7 +77,7 @@
          <div class="row" method = "show">
          @endif
             
-                <div class="col-xs-12 col-sm-3 col-md-3" style="float: left;">
+                <div class="col-xs-12 col-sm-3 col-md-3" style="float: left; word-break: break-word;">
                   <div class="wow bounceInUp" data-wow-delay="0.2s">
                     <div class="team boxed-grey">
                     <div class="inner">
